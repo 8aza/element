@@ -1,8 +1,8 @@
 <template>
   <label
-    class="el-radio"
+    class="baza-xls-radio"
     :class="[
-      border && radioSize ? 'el-radio--' + radioSize : '',
+      border && radioSize ? 'baza-xls-radio--' + radioSize : '',
       { 'is-disabled': isDisabled },
       { 'is-focus': focus },
       { 'is-bordered': border },
@@ -14,16 +14,16 @@
     :tabindex="tabIndex"
     @keydown.space.stop.prevent="model = isDisabled ? model : label"
   >
-    <span class="el-radio__input"
+    <span class="baza-xls-radio__input"
       :class="{
         'is-disabled': isDisabled,
         'is-checked': model === label
       }"
     >
-      <span class="el-radio__inner"></span>
+      <span class="baza-xls-radio__inner"></span>
       <input
         ref="radio"
-        class="el-radio__original"
+        class="baza-xls-radio__original"
         :value="label"
         type="radio"
         aria-hidden="true"
@@ -36,7 +36,7 @@
         tabindex="-1"
       >
     </span>
-    <span class="el-radio__label" @keydown.stop>
+    <span class="baza-xls-radio__label" @keydown.stop>
       <slot></slot>
       <template v-if="!$slots.default">{{label}}</template>
     </span>

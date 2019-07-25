@@ -1,5 +1,5 @@
 <template>
-  <aside class="el-aside" :style="{ width }">
+  <aside class="baza-xls-aside" :style="{ width }">
     <slot></slot>
   </aside>
 </template>

@@ -76,7 +76,7 @@ export default {
 
     renderEmptyText(h) {
       return (
-        <div class="el-cascader-menu__empty-text">{ this.t('el.cascader.noData') }</div>
+        <div class="baza-xls-cascader-menu__empty-text">{ this.t('el.cascader.noData') }</div>
       );
     },
     renderNodeList(h) {
@@ -103,7 +103,7 @@ export default {
 
       return [
         ...nodes,
-        isHoverMenu ? <svg ref='hoverZone' class='el-cascader-menu__hover-zone'></svg> : null
+        isHoverMenu ? <svg ref='hoverZone' class='baza-xls-cascader-menu__hover-zone'></svg> : null
       ];
     }
   },
@@ -119,19 +119,19 @@ export default {
     }
 
     return (
-      <el-scrollbar
+      <baza-xls-scrollbar
         tag="ul"
         role="menu"
         id={ menuId }
-        class="el-cascader-menu"
-        wrap-class="el-cascader-menu__wrap"
+        class="baza-xls-cascader-menu"
+        wrap-class="baza-xls-cascader-menu__wrap"
         view-class={{
-          'el-cascader-menu__list': true,
+          'baza-xls-cascader-menu__list': true,
           'is-empty': isEmpty
         }}
         { ...events }>
         { isEmpty ? this.renderEmptyText(h) : this.renderNodeList(h) }
-      </el-scrollbar>
+      </baza-xls-scrollbar>
     );
   }
 };

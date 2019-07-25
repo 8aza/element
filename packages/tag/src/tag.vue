@@ -34,10 +34,10 @@
     render(h) {
       const { type, tagSize, hit, effect } = this;
       const classes = [
-        'el-tag',
-        type ? `el-tag--${type}` : '',
-        tagSize ? `el-tag--${tagSize}` : '',
-        effect ? `el-tag--${effect}` : '',
+        'baza-xls-tag',
+        type ? `baza-xls-tag--${type}` : '',
+        tagSize ? `baza-xls-tag--${tagSize}` : '',
+        effect ? `baza-xls-tag--${effect}` : '',
         hit && 'is-hit'
       ];
       const tagEl = (
@@ -47,12 +47,12 @@
           on-click={ this.handleClick }>
           { this.$slots.default }
           {
-            this.closable && <i class="el-tag__close el-icon-close" on-click={ this.handleClose }></i>
+            this.closable && <i class="baza-xls-tag__close baza-xls-icon-close" on-click={ this.handleClose }></i>
           }
         </span>
       );
 
-      return this.disableTransitions ? tagEl : <transition name="el-zoom-in-center">{ tagEl }</transition>;
+      return this.disableTransitions ? tagEl : <transition name="baza-xls-zoom-in-center">{ tagEl }</transition>;
     }
   };
 </script>

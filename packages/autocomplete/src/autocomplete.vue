@@ -1,13 +1,13 @@
 <template>
   <div
-    class="el-autocomplete"
+    class="baza-xls-autocomplete"
     v-clickoutside="close"
     aria-haspopup="listbox"
     role="combobox"
     :aria-expanded="suggestionVisible"
     :aria-owns="id"
   >
-    <el-input
+    <baza-xls-input
       ref="input"
       v-bind="[$props, $attrs]"
       @input="handleChange"
@@ -31,8 +31,8 @@
       <template slot="suffix" v-if="$slots.suffix">
         <slot name="suffix"></slot>
       </template>
-    </el-input>
-    <el-autocomplete-suggestions
+    </baza-xls-input>
+    <baza-xls-autocomplete-suggestions
       visible-arrow
       :class="[popperClass ? popperClass : '']"
       :popper-options="popperOptions"
@@ -53,7 +53,7 @@
           {{ item[valueKey] }}
         </slot>
       </li>
-    </el-autocomplete-suggestions>
+    </baza-xls-autocomplete-suggestions>
   </div>
 </template>
 <script>
@@ -148,7 +148,7 @@
         return (isValidData || this.loading) && this.activated;
       },
       id() {
-        return `el-autocomplete-${generateId()}`;
+        return `baza-xls-autocomplete-${generateId()}`;
       }
     },
     watch: {
@@ -242,8 +242,8 @@
         if (index >= this.suggestions.length) {
           index = this.suggestions.length - 1;
         }
-        const suggestion = this.$refs.suggestions.$el.querySelector('.el-autocomplete-suggestion__wrap');
-        const suggestionList = suggestion.querySelectorAll('.el-autocomplete-suggestion__list li');
+        const suggestion = this.$refs.suggestions.$el.querySelector('.baza-xls-autocomplete-suggestion__wrap');
+        const suggestionList = suggestion.querySelectorAll('.baza-xls-autocomplete-suggestion__list li');
 
         let highlightItem = suggestionList[index];
         let scrollTop = suggestion.scrollTop;

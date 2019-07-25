@@ -1,5 +1,5 @@
 <template>
-  <transition name="el-fade-in">
+  <transition name="baza-xls-fade-in">
     <div
       v-if="visible"
       @click.stop="handleClick"
@@ -7,9 +7,9 @@
         'right': styleRight,
         'bottom': styleBottom
       }"
-      class="el-backtop">
+      class="baza-xls-backtop">
       <slot>
-        <el-icon name="caret-top"></el-icon>
+        <baza-xls-icon name="caret-top"></baza-xls-icon>
       </slot>
     </div>
   </transition>

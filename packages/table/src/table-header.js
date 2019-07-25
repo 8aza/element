@@ -76,7 +76,7 @@ export default {
     if (isGroup) this.$parent.isGroup = true;
     return (
       <table
-        class="el-table__header"
+        class="baza-xls-table__header"
         cellspacing="0"
         cellpadding="0"
         border="0">
@@ -127,9 +127,9 @@ export default {
                       }
                       {
                         column.filterable ? (<span
-                          class="el-table__column-filter-trigger"
+                          class="baza-xls-table__column-filter-trigger"
                           on-click={ ($event) => this.handleFilterClick($event, column) }>
-                          <i class={ ['el-icon-arrow-down', column.filterOpened ? 'el-icon-arrow-up' : ''] }></i>
+                          <i class={ ['baza-xls-icon-arrow-down', column.filterOpened ? 'baza-xls-icon-arrow-up' : ''] }></i>
                         </span>) : ''
                       }
                     </div>
@@ -298,7 +298,7 @@ export default {
       event.stopPropagation();
       const target = event.target;
       let cell = target.tagName === 'TH' ? target : target.parentNode;
-      cell = cell.querySelector('.el-table__column-filter-trigger') || cell;
+      cell = cell.querySelector('.baza-xls-table__column-filter-trigger') || cell;
       const table = this.$parent;
 
       let filterPanel = this.filterPanels[column.id];

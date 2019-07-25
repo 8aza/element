@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-slider__button-wrapper"
+    class="baza-xls-slider__button-wrapper"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
     @mousedown="onButtonDown"
@@ -16,14 +16,14 @@
     @keydown.down.prevent="onLeftKeyDown"
     @keydown.up.prevent="onRightKeyDown"
   >
-    <el-tooltip
+    <baza-xls-tooltip
       placement="top"
       ref="tooltip"
       :popper-class="tooltipClass"
       :disabled="!showTooltip">
       <span slot="content">{{ formatValue }}</span>
-      <div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }"></div>
-    </el-tooltip>
+      <div class="baza-xls-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }"></div>
+    </baza-xls-tooltip>
   </div>
 </template>
 

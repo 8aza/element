@@ -1,8 +1,8 @@
 <template>
   <label
-    class="el-radio-button"
+    class="baza-xls-radio-button"
     :class="[
-      size ? 'el-radio-button--' + size : '',
+      size ? 'baza-xls-radio-button--' + size : '',
       { 'is-active': value === label },
       { 'is-disabled': isDisabled },
       { 'is-focus': focus }
@@ -14,7 +14,7 @@
     @keydown.space.stop.prevent="value = isDisabled ? value : label"
   >
     <input
-      class="el-radio-button__orig-radio"
+      class="baza-xls-radio-button__orig-radio"
       :value="label"
       type="radio"
       v-model="value"
@@ -26,7 +26,7 @@
       @blur="focus = false"
     >
     <span
-      class="el-radio-button__inner"
+      class="baza-xls-radio-button__inner"
       :style="value === label ? activeStyle : null"
       @keydown.stop>
       <slot></slot>

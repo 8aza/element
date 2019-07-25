@@ -1,23 +1,23 @@
 <template>
-  <div class="el-table"
+  <div class="baza-xls-table"
     :class="[{
-      'el-table--fit': fit,
-      'el-table--striped': stripe,
-      'el-table--border': border || isGroup,
-      'el-table--hidden': isHidden,
-      'el-table--group': isGroup,
-      'el-table--fluid-height': maxHeight,
-      'el-table--scrollable-x': layout.scrollX,
-      'el-table--scrollable-y': layout.scrollY,
-      'el-table--enable-row-hover': !store.states.isComplex,
-      'el-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
-    }, tableSize ? `el-table--${ tableSize }` : '']"
+      'baza-xls-table--fit': fit,
+      'baza-xls-table--striped': stripe,
+      'baza-xls-table--border': border || isGroup,
+      'baza-xls-table--hidden': isHidden,
+      'baza-xls-table--group': isGroup,
+      'baza-xls-table--fluid-height': maxHeight,
+      'baza-xls-table--scrollable-x': layout.scrollX,
+      'baza-xls-table--scrollable-y': layout.scrollY,
+      'baza-xls-table--enable-row-hover': !store.states.isComplex,
+      'baza-xls-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
+    }, tableSize ? `baza-xls-table--${ tableSize }` : '']"
     @mouseleave="handleMouseLeave($event)">
     <div class="hidden-columns" ref="hiddenColumns"><slot></slot></div>
     <div
       v-if="showHeader"
       v-mousewheel="handleHeaderFooterMousewheel"
-      class="el-table__header-wrapper"
+      class="baza-xls-table__header-wrapper"
       ref="headerWrapper">
       <table-header
         ref="tableHeader"
@@ -30,7 +30,7 @@
       </table-header>
     </div>
     <div
-      class="el-table__body-wrapper"
+      class="baza-xls-table__body-wrapper"
       ref="bodyWrapper"
       :class="[layout.scrollX ? `is-scrolling-${scrollPosition}` : 'is-scrolling-none']"
       :style="[bodyHeight]">
@@ -47,18 +47,18 @@
       </table-body>
       <div
         v-if="!data || data.length === 0"
-        class="el-table__empty-block"
+        class="baza-xls-table__empty-block"
         ref="emptyBlock"
         :style="{
           width: bodyWidth
         }">
-        <span class="el-table__empty-text">
+        <span class="baza-xls-table__empty-text">
           <slot name="empty">{{ emptyText || t('el.table.emptyText') }}</slot>
         </span>
       </div>
       <div
         v-if="$slots.append"
-        class="el-table__append-wrapper"
+        class="baza-xls-table__append-wrapper"
         ref="appendWrapper">
         <slot name="append"></slot>
       </div>
@@ -67,7 +67,7 @@
       v-if="showSummary"
       v-show="data && data.length > 0"
       v-mousewheel="handleHeaderFooterMousewheel"
-      class="el-table__footer-wrapper"
+      class="baza-xls-table__footer-wrapper"
       ref="footerWrapper">
       <table-footer
         :store="store"
@@ -83,7 +83,7 @@
     <div
       v-if="fixedColumns.length > 0"
       v-mousewheel="handleFixedMousewheel"
-      class="el-table__fixed"
+      class="baza-xls-table__fixed"
       ref="fixedWrapper"
       :style="[{
         width: layout.fixedWidth ? layout.fixedWidth + 'px' : ''
@@ -91,7 +91,7 @@
       fixedHeight]">
       <div
         v-if="showHeader"
-        class="el-table__fixed-header-wrapper"
+        class="baza-xls-table__fixed-header-wrapper"
         ref="fixedHeaderWrapper" >
         <table-header
           ref="fixedTableHeader"
@@ -103,7 +103,7 @@
           }"></table-header>
       </div>
       <div
-        class="el-table__fixed-body-wrapper"
+        class="baza-xls-table__fixed-body-wrapper"
         ref="fixedBodyWrapper"
         :style="[{
           top: layout.headerHeight + 'px'
@@ -122,13 +122,13 @@
         </table-body>
         <div
           v-if="$slots.append"
-          class="el-table__append-gutter"
+          class="baza-xls-table__append-gutter"
           :style="{ height: layout.appendHeight + 'px'}"></div>
       </div>
       <div
         v-if="showSummary"
         v-show="data && data.length > 0"
-        class="el-table__fixed-footer-wrapper"
+        class="baza-xls-table__fixed-footer-wrapper"
         ref="fixedFooterWrapper">
         <table-footer
           fixed="left"
@@ -144,7 +144,7 @@
     <div
       v-if="rightFixedColumns.length > 0"
       v-mousewheel="handleFixedMousewheel"
-      class="el-table__fixed-right"
+      class="baza-xls-table__fixed-right"
       ref="rightFixedWrapper"
       :style="[{
         width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '',
@@ -152,7 +152,7 @@
       },
       fixedHeight]">
       <div v-if="showHeader"
-        class="el-table__fixed-header-wrapper"
+        class="baza-xls-table__fixed-header-wrapper"
         ref="rightFixedHeaderWrapper">
         <table-header
           ref="rightFixedTableHeader"
@@ -164,7 +164,7 @@
           }"></table-header>
       </div>
       <div
-        class="el-table__fixed-body-wrapper"
+        class="baza-xls-table__fixed-body-wrapper"
         ref="rightFixedBodyWrapper"
         :style="[{
           top: layout.headerHeight + 'px'
@@ -183,13 +183,13 @@
         </table-body>
          <div
           v-if="$slots.append"
-          class="el-table__append-gutter"
+          class="baza-xls-table__append-gutter"
           :style="{ height: layout.appendHeight + 'px' }"></div>
       </div>
       <div
         v-if="showSummary"
         v-show="data && data.length > 0"
-        class="el-table__fixed-footer-wrapper"
+        class="baza-xls-table__fixed-footer-wrapper"
         ref="rightFixedFooterWrapper">
         <table-footer
           fixed="right"
@@ -204,13 +204,13 @@
     </div>
     <div
       v-if="rightFixedColumns.length > 0"
-      class="el-table__fixed-right-patch"
+      class="baza-xls-table__fixed-right-patch"
       ref="rightFixedPatch"
       :style="{
         width: layout.scrollY ? layout.gutterWidth + 'px' : '0',
         height: layout.headerHeight + 'px'
       }"></div>
-    <div class="el-table__column-resize-proxy" ref="resizeProxy" v-show="resizeProxyVisible"></div>
+    <div class="baza-xls-table__column-resize-proxy" ref="resizeProxy" v-show="resizeProxyVisible"></div>
   </div>
 </template>
 
@@ -615,7 +615,7 @@
     },
 
     created() {
-      this.tableId = 'el-table_' + tableIdSeed++;
+      this.tableId = 'baza-xls-table_' + tableIdSeed++;
       this.debouncedUpdateLayout = debounce(50, () => this.doLayout());
     },
 

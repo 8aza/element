@@ -1,5 +1,5 @@
 <template>
-  <div class="el-button-group">
+  <div class="baza-xls-button-group">
     <slot></slot>
   </div>
 </template>

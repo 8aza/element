@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-radio-group"
+    class="baza-xls-radio-group"
     role="radiogroup"
     @keydown="handleKeydown"
   >

@@ -1,5 +1,5 @@
 <template>
-  <main class="el-main">
+  <main class="baza-xls-main">
     <slot></slot>
   </main>
 </template>

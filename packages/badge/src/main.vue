@@ -1,13 +1,13 @@
 <template>
-  <div class="el-badge">
+  <div class="baza-xls-badge">
     <slot></slot>
-    <transition name="el-zoom-in-center">
+    <transition name="baza-xls-zoom-in-center">
       <sup
         v-show="!hidden && (content || content === 0 || isDot)"
         v-text="content"
-        class="el-badge__content"
+        class="baza-xls-badge__content"
         :class="[
-          'el-badge__content--' + type,
+          'baza-xls-badge__content--' + type,
           {
             'is-fixed': $slots.default,
             'is-dot': isDot

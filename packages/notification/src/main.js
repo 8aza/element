@@ -29,7 +29,12 @@ const Notification = function(options) {
   }
   instance.id = id;
   instance.$mount();
-  document.body.appendChild(instance.$el);
+  let bazaRoot = document.getElementById('baza-root-wrapper');
+  if (bazaRoot) {
+    bazaRoot.appendChild(instance.$el);
+  } else {
+    document.body.appendChild(instance.$el);
+  }
   instance.visible = true;
   instance.dom = instance.$el;
   instance.dom.style.zIndex = PopupManager.nextZIndex();

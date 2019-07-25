@@ -1,25 +1,25 @@
 <template>
   <div
     :class="[
-      'el-color-picker',
+      'baza-xls-color-picker',
       colorDisabled ? 'is-disabled' : '',
-      colorSize ? `el-color-picker--${ colorSize }` : ''
+      colorSize ? `baza-xls-color-picker--${ colorSize }` : ''
     ]"
     v-clickoutside="hide">
-    <div class="el-color-picker__mask" v-if="colorDisabled"></div>
-    <div class="el-color-picker__trigger" @click="handleTrigger">
-      <span class="el-color-picker__color" :class="{ 'is-alpha': showAlpha }">
-        <span class="el-color-picker__color-inner"
+    <div class="baza-xls-color-picker__mask" v-if="colorDisabled"></div>
+    <div class="baza-xls-color-picker__trigger" @click="handleTrigger">
+      <span class="baza-xls-color-picker__color" :class="{ 'is-alpha': showAlpha }">
+        <span class="baza-xls-color-picker__color-inner"
           :style="{
             backgroundColor: displayedColor
           }"></span>
-        <span class="el-color-picker__empty el-icon-close" v-if="!value && !showPanelColor"></span>
+        <span class="baza-xls-color-picker__empty baza-xls-icon-close" v-if="!value && !showPanelColor"></span>
       </span>
-      <span class="el-color-picker__icon el-icon-arrow-down" v-show="value || showPanelColor"></span>
+      <span class="baza-xls-color-picker__icon baza-xls-icon-arrow-down" v-show="value || showPanelColor"></span>
     </div>
     <picker-dropdown
        ref="dropdown"
-       :class="['el-color-picker__panel', popperClass || '']"
+       :class="['baza-xls-color-picker__panel', popperClass || '']"
        v-model="showPicker"
        @pick="confirmValue"
        @clear="clearValue"

@@ -130,12 +130,12 @@
         }
 
         return (
-          <el-checkbox
+          <baza-xls-checkbox
             value={ node.checked }
             indeterminate={ node.indeterminate }
             disabled={ isDisabled }
             { ...events }
-          ></el-checkbox>
+          ></baza-xls-checkbox>
         );
       },
 
@@ -148,7 +148,7 @@
         }
 
         return (
-          <el-radio
+          <baza-xls-radio
             value={ checkedValue }
             label={ value }
             disabled={ isDisabled }
@@ -156,25 +156,25 @@
             nativeOnClick={ stopPropagation }>
             {/* add an empty element to avoid render label */}
             <span></span>
-          </el-radio>
+          </baza-xls-radio>
         );
       },
 
       renderCheckIcon(h) {
         return (
-          <i class="el-icon-check el-cascader-node__prefix"></i>
+          <i class="baza-xls-icon-check baza-xls-cascader-node__prefix"></i>
         );
       },
 
       renderLoadingIcon(h) {
         return (
-          <i class="el-icon-loading el-cascader-node__postfix"></i>
+          <i class="baza-xls-icon-loading baza-xls-cascader-node__postfix"></i>
         );
       },
 
       renderExpandIcon(h) {
         return (
-          <i class="el-icon-arrow-right el-cascader-node__postfix"></i>
+          <i class="baza-xls-icon-arrow-right baza-xls-cascader-node__postfix"></i>
         );
       },
 
@@ -186,7 +186,7 @@
           : null;
 
         return (
-          <span class="el-cascader-node__label">{ vnode || node.label }</span>
+          <span class="baza-xls-cascader-node__label">{ vnode || node.label }</span>
         );
       }
     },
@@ -229,7 +229,7 @@
           aria-expanded={ inActivePath }
           tabindex={ disabled ? null : -1 }
           class={{
-            'el-cascader-node': true,
+            'baza-xls-cascader-node': true,
             'is-selectable': checkStrictly,
             'in-active-path': inActivePath,
             'in-checked-path': inCheckedPath,

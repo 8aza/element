@@ -1,35 +1,35 @@
 <template>
   <div
-    class="el-select"
-    :class="[selectSize ? 'el-select--' + selectSize : '']"
+    class="baza-xls-select"
+    :class="[selectSize ? 'baza-xls-select--' + selectSize : '']"
     @click.stop="toggleMenu"
     v-clickoutside="handleClose">
     <div
-      class="el-select__tags"
+      class="baza-xls-select__tags"
       v-if="multiple"
       ref="tags"
       :style="{ 'max-width': inputWidth - 32 + 'px', width: '100%' }">
       <span v-if="collapseTags && selected.length">
-        <el-tag
+        <baza-xls-tag
           :closable="!selectDisabled"
           :size="collapseTagSize"
           :hit="selected[0].hitState"
           type="info"
           @close="deleteTag($event, selected[0])"
           disable-transitions>
-          <span class="el-select__tags-text">{{ selected[0].currentLabel }}</span>
-        </el-tag>
-        <el-tag
+          <span class="baza-xls-select__tags-text">{{ selected[0].currentLabel }}</span>
+        </baza-xls-tag>
+        <baza-xls-tag
           v-if="selected.length > 1"
           :closable="false"
           :size="collapseTagSize"
           type="info"
           disable-transitions>
-          <span class="el-select__tags-text">+ {{ selected.length - 1 }}</span>
-        </el-tag>
+          <span class="baza-xls-select__tags-text">+ {{ selected.length - 1 }}</span>
+        </baza-xls-tag>
       </span>
       <transition-group @after-leave="resetInputHeight" v-if="!collapseTags">
-        <el-tag
+        <baza-xls-tag
           v-for="item in selected"
           :key="getValueKey(item)"
           :closable="!selectDisabled"
@@ -38,13 +38,13 @@
           type="info"
           @close="deleteTag($event, item)"
           disable-transitions>
-          <span class="el-select__tags-text">{{ item.currentLabel }}</span>
-        </el-tag>
+          <span class="baza-xls-select__tags-text">{{ item.currentLabel }}</span>
+        </baza-xls-tag>
       </transition-group>
 
       <input
         type="text"
-        class="el-select__input"
+        class="baza-xls-select__input"
         :class="[selectSize ? `is-${ selectSize }` : '']"
         :disabled="selectDisabled"
         :autocomplete="autoComplete || autocomplete"
@@ -67,7 +67,7 @@
         :style="{ 'flex-grow': '1', width: inputLength / (inputWidth - 32) + '%', 'max-width': inputWidth - 42 + 'px' }"
         ref="input">
     </div>
-    <el-input
+    <baza-xls-input
       ref="reference"
       v-model="selectedLabel"
       type="text"
@@ -95,39 +95,39 @@
         <slot name="prefix"></slot>
       </template>
       <template slot="suffix">
-        <i v-show="!showClose" :class="['el-select__caret', 'el-input__icon', 'el-icon-' + iconClass]"></i>
-        <i v-if="showClose" class="el-select__caret el-input__icon el-icon-circle-close" @click="handleClearClick"></i>
+        <i v-show="!showClose" :class="['baza-xls-select__caret', 'baza-xls-input__icon', 'baza-xls-icon-' + iconClass]"></i>
+        <i v-if="showClose" class="baza-xls-select__caret baza-xls-input__icon baza-xls-icon-circle-close" @click="handleClearClick"></i>
       </template>
-    </el-input>
+    </baza-xls-input>
     <transition
-      name="el-zoom-in-top"
+      name="baza-xls-zoom-in-top"
       @before-enter="handleMenuEnter"
       @after-leave="doDestroy">
-      <el-select-menu
+      <baza-xls-select-menu
         ref="popper"
         :append-to-body="popperAppendToBody"
         v-show="visible && emptyText !== false">
-        <el-scrollbar
+        <baza-xls-scrollbar
           tag="ul"
-          wrap-class="el-select-dropdown__wrap"
-          view-class="el-select-dropdown__list"
+          wrap-class="baza-xls-select-dropdown__wrap"
+          view-class="baza-xls-select-dropdown__list"
           ref="scrollbar"
           :class="{ 'is-empty': !allowCreate && query && filteredOptionsCount === 0 }"
           v-show="options.length > 0 && !loading">
-          <el-option
+          <baza-xls-option
             :value="query"
             created
             v-if="showNewOption">
-          </el-option>
+          </baza-xls-option>
           <slot></slot>
-        </el-scrollbar>
+        </baza-xls-scrollbar>
         <template v-if="emptyText && (!allowCreate || loading || (allowCreate && options.length === 0 ))">
           <slot name="empty" v-if="$slots.empty"></slot>
-          <p class="el-select-dropdown__empty" v-else>
+          <p class="baza-xls-select-dropdown__empty" v-else>
             {{ emptyText }}
           </p>
         </template>
-      </el-select-menu>
+      </baza-xls-select-menu>
     </transition>
   </div>
 </template>
@@ -491,7 +491,7 @@
       scrollToOption(option) {
         const target = Array.isArray(option) && option[0] ? option[0].$el : option.$el;
         if (this.$refs.popper && target) {
-          const menu = this.$refs.popper.$el.querySelector('.el-select-dropdown__wrap');
+          const menu = this.$refs.popper.$el.querySelector('.baza-xls-select-dropdown__wrap');
           scrollIntoView(menu, target);
         }
         this.$refs.scrollbar && this.$refs.scrollbar.handleScroll();

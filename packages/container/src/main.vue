@@ -1,5 +1,5 @@
 <template>
-  <section class="el-container" :class="{ 'is-vertical': isVertical }">
+  <section class="baza-xls-container" :class="{ 'is-vertical': isVertical }">
     <slot></slot>
   </section>
 </template>
@@ -24,7 +24,7 @@
         return this.$slots && this.$slots.default
           ? this.$slots.default.some(vnode => {
             const tag = vnode.componentOptions && vnode.componentOptions.tag;
-            return tag === 'el-header' || tag === 'el-footer';
+            return tag === 'baza-xls-header' || tag === 'baza-xls-footer';
           })
           : false;
       }

@@ -91,7 +91,7 @@
         this.$emit('visible-change', val);
       },
       focusing(val) {
-        const selfDefine = this.$el.querySelector('.el-dropdown-selfdefine');
+        const selfDefine = this.$el.querySelector('.baza-xls-dropdown-selfdefine');
         if (selfDefine) { // 自定义
           if (val) {
             selfDefine.className += ' focusing';
@@ -196,7 +196,7 @@
         if (!this.splitButton) { // 自定义
           this.triggerElm.setAttribute('role', 'button');
           this.triggerElm.setAttribute('tabindex', this.tabindex);
-          this.triggerElm.setAttribute('class', (this.triggerElm.getAttribute('class') || '') + ' el-dropdown-selfdefine'); // 控制
+          this.triggerElm.setAttribute('class', (this.triggerElm.getAttribute('class') || '') + ' baza-xls-dropdown-selfdefine'); // 控制
         }
       },
       initEvent() {
@@ -259,17 +259,17 @@
 
       let triggerElm = !splitButton
         ? this.$slots.default
-        : (<el-button-group>
-          <el-button type={type} size={dropdownSize} nativeOn-click={handleMainButtonClick}>
+        : (<baza-xls-button-group>
+          <baza-xls-button type={type} size={dropdownSize} nativeOn-click={handleMainButtonClick}>
             {this.$slots.default}
-          </el-button>
-          <el-button ref="trigger" type={type} size={dropdownSize} class="el-dropdown__caret-button">
-            <i class="el-dropdown__icon el-icon-arrow-down"></i>
-          </el-button>
-        </el-button-group>);
+          </baza-xls-button>
+          <baza-xls-button ref="trigger" type={type} size={dropdownSize} class="baza-xls-dropdown__caret-button">
+            <i class="baza-xls-dropdown__icon baza-xls-icon-arrow-down"></i>
+          </baza-xls-button>
+        </baza-xls-button-group>);
 
       return (
-        <div class="el-dropdown" v-clickoutside={hide}>
+        <div class="baza-xls-dropdown" v-clickoutside={hide}>
           {triggerElm}
           {this.$slots.dropdown}
         </div>

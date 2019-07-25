@@ -76,7 +76,7 @@
           : this.popperAppendToBody;
       },
       menuTransitionName() {
-        return this.rootMenu.collapse ? 'el-zoom-in-left' : 'el-zoom-in-top';
+        return this.rootMenu.collapse ? 'baza-xls-zoom-in-left' : 'baza-xls-zoom-in-top';
       },
       opened() {
         return this.rootMenu.openedMenus.indexOf(this.index) > -1;
@@ -284,13 +284,13 @@
           <div
             ref="menu"
             v-show={opened}
-            class={[`el-menu--${mode}`, popperClass]}
+            class={[`baza-xls-menu--${mode}`, popperClass]}
             on-mouseenter={($event) => this.handleMouseenter($event, 100)}
             on-mouseleave={() => this.handleMouseleave(true)}
             on-focus={($event) => this.handleMouseenter($event, 100)}>
             <ul
               role="menu"
-              class={['el-menu el-menu--popup', `el-menu--popup-${currentPlacement}`]}
+              class={['baza-xls-menu baza-xls-menu--popup', `baza-xls-menu--popup-${currentPlacement}`]}
               style={{ backgroundColor: rootMenu.backgroundColor || '' }}>
               {$slots.default}
             </ul>
@@ -302,7 +302,7 @@
         <el-collapse-transition>
           <ul
             role="menu"
-            class="el-menu el-menu--inline"
+            class="baza-xls-menu baza-xls-menu--inline"
             v-show={opened}
             style={{ backgroundColor: rootMenu.backgroundColor || '' }}>
             {$slots.default}
@@ -313,12 +313,12 @@
       const submenuTitleIcon = (
         rootMenu.mode === 'horizontal' && isFirstLevel ||
         rootMenu.mode === 'vertical' && !rootMenu.collapse
-      ) ? 'el-icon-arrow-down' : 'el-icon-arrow-right';
+      ) ? 'baza-xls-icon-arrow-down' : 'baza-xls-icon-arrow-right';
 
       return (
         <li
           class={{
-            'el-submenu': true,
+            'baza-xls-submenu': true,
             'is-active': active,
             'is-opened': opened,
             'is-disabled': disabled
@@ -331,7 +331,7 @@
           on-focus={this.handleMouseenter}
         >
           <div
-            class="el-submenu__title"
+            class="baza-xls-submenu__title"
             ref="submenu-title"
             on-click={this.handleClick}
             on-mouseenter={this.handleTitleMouseenter}
@@ -339,7 +339,7 @@
             style={[paddingStyle, titleStyle, { backgroundColor }]}
           >
             {$slots.title}
-            <i class={[ 'el-submenu__icon-arrow', submenuTitleIcon ]}></i>
+            <i class={[ 'baza-xls-submenu__icon-arrow', submenuTitleIcon ]}></i>
           </div>
           {this.isMenuPopup ? popupMenu : inlineMenu}
         </li>

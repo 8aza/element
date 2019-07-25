@@ -1,9 +1,9 @@
 <template>
   <div
-    class="el-steps"
+    class="baza-xls-steps"
     :class="[
-       !simple && 'el-steps--' + direction,
-       simple && 'el-steps--simple'
+       !simple && 'baza-xls-steps--' + direction,
+       simple && 'baza-xls-steps--simple'
      ]">
       <slot></slot>
   </div>

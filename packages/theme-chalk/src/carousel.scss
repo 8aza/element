@@ -22,19 +22,19 @@
     outline: none;
     padding: 0;
     margin: 0;
-    height: $--carousel-arrow-size;
-    width: $--carousel-arrow-size;
+    height: $--carousbaza-xls-arrow-size;
+    width: $--carousbaza-xls-arrow-size;
     cursor: pointer;
     transition: .3s;
     border-radius: 50%;
-    background-color: $--carousel-arrow-background;
+    background-color: $--carousbaza-xls-arrow-background;
     color: $--color-white;
     position: absolute;
     top: 50%;
     z-index: 10;
     transform: translateY(-50%);
     text-align: center;
-    font-size: $--carousel-arrow-font-size;
+    font-size: $--carousbaza-xls-arrow-font-size;
 
     @include m(left) {
       left: 16px;
@@ -45,7 +45,7 @@
     }
 
     &:hover {
-      background-color: $--carousel-arrow-hover-background;
+      background-color: $--carousbaza-xls-arrow-hover-background;
     }
 
     & i {
@@ -73,15 +73,15 @@
     }
 
     @include m(outside) {
-      bottom: #{$--carousel-indicator-height + $--carousel-indicator-padding-vertical * 2};
+      bottom: #{$--carousbaza-xls-indicator-height + $--carousbaza-xls-indicator-padding-vertical * 2};
       text-align: center;
       position: static;
       transform: none;
-      .el-carousel__indicator:hover button {
+      .baza-xls-carousel__indicator:hover button {
         opacity: 0.64;
       }
       button {
-        background-color: $--carousel-indicator-out-color;
+        background-color: $--carousbaza-xls-indicator-out-color;
         opacity: 0.24;
       }
     }
@@ -92,14 +92,14 @@
       transform: none;
       text-align: center;
 
-      .el-carousel__button {
+      .baza-xls-carousel__button {
         height: auto;
         width: auto;
         padding: 2px 18px;
         font-size: 12px;
       }
 
-      .el-carousel__indicator {
+      .baza-xls-carousel__indicator {
         padding: 6px 4px;
       }
     }
@@ -115,14 +115,14 @@
 
     @include m(horizontal) {
       display: inline-block;
-      padding: $--carousel-indicator-padding-vertical $--carousel-indicator-padding-horizontal;
+      padding: $--carousbaza-xls-indicator-padding-vertical $--carousbaza-xls-indicator-padding-horizontal;
     }
 
     @include m(vertical) {
-      padding: $--carousel-indicator-padding-horizontal $--carousel-indicator-padding-vertical;
-      .el-carousel__button {
-        width: $--carousel-indicator-height;
-        height: #{$--carousel-indicator-width / 2};
+      padding: $--carousbaza-xls-indicator-padding-horizontal $--carousbaza-xls-indicator-padding-vertical;
+      .baza-xls-carousel__button {
+        width: $--carousbaza-xls-indicator-height;
+        height: #{$--carousbaza-xls-indicator-width / 2};
       }
     }
 
@@ -136,8 +136,8 @@
   @include e(button) {
     display: block;
     opacity: 0.48;
-    width: $--carousel-indicator-width;
-    height: $--carousel-indicator-height;
+    width: $--carousbaza-xls-indicator-width;
+    height: $--carousbaza-xls-indicator-height;
     background-color: $--color-white;
     border: none;
     outline: none;
@@ -148,14 +148,14 @@
   }
 }
 
-.carousel-arrow-left-enter,
-.carousel-arrow-left-leave-active {
+.carousbaza-xls-arrow-left-enter,
+.carousbaza-xls-arrow-left-leave-active {
   transform: translateY(-50%) translateX(-10px);
   opacity: 0;
 }
 
-.carousel-arrow-right-enter,
-.carousel-arrow-right-leave-active {
+.carousbaza-xls-arrow-right-enter,
+.carousbaza-xls-arrow-right-leave-active {
   transform: translateY(-50%) translateX(10px);
   opacity: 0;
 }

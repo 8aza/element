@@ -1,17 +1,17 @@
 <template>
   <transition
-    name="el-zoom-in-top"
+    name="baza-xls-zoom-in-top"
     @after-leave="$emit('dodestroy')">
     <div
       v-show="visible"
-      class="el-time-range-picker el-picker-panel el-popper"
+      class="baza-xls-time-range-picker baza-xls-picker-panel baza-xls-popper"
       :class="popperClass">
-      <div class="el-time-range-picker__content">
-        <div class="el-time-range-picker__cell">
-          <div class="el-time-range-picker__header">{{ t('el.datepicker.startTime') }}</div>
+      <div class="baza-xls-time-range-picker__content">
+        <div class="baza-xls-time-range-picker__cell">
+          <div class="baza-xls-time-range-picker__header">{{ t('el.datepicker.startTime') }}</div>
           <div
             :class="{ 'has-seconds': showSeconds, 'is-arrow': arrowControl }"
-            class="el-time-range-picker__body el-time-panel__content">
+            class="baza-xls-time-range-picker__body baza-xls-time-panel__content">
             <time-spinner
               ref="minSpinner"
               :show-seconds="showSeconds"
@@ -23,11 +23,11 @@
             </time-spinner>
           </div>
         </div>
-        <div class="el-time-range-picker__cell">
-          <div class="el-time-range-picker__header">{{ t('el.datepicker.endTime') }}</div>
+        <div class="baza-xls-time-range-picker__cell">
+          <div class="baza-xls-time-range-picker__header">{{ t('el.datepicker.endTime') }}</div>
           <div
             :class="{ 'has-seconds': showSeconds, 'is-arrow': arrowControl }"
-            class="el-time-range-picker__body el-time-panel__content">
+            class="baza-xls-time-range-picker__body baza-xls-time-panel__content">
             <time-spinner
               ref="maxSpinner"
               :show-seconds="showSeconds"
@@ -40,14 +40,14 @@
           </div>
         </div>
       </div>
-      <div class="el-time-panel__footer">
+      <div class="baza-xls-time-panel__footer">
         <button
           type="button"
-          class="el-time-panel__btn cancel"
+          class="baza-xls-time-panel__btn cancel"
           @click="handleCancel()">{{ t('el.datepicker.cancel') }}</button>
         <button
           type="button"
-          class="el-time-panel__btn confirm"
+          class="baza-xls-time-panel__btn confirm"
           @click="handleConfirm()"
           :disabled="btnDisabled">{{ t('el.datepicker.confirm') }}</button>
       </div>
@@ -72,7 +72,7 @@
   const minTimeOfDay = function(date) {
     return modifyDate(MIN_TIME, date.getFullYear(), date.getMonth(), date.getDate());
   };
-  
+
   const maxTimeOfDay = function(date) {
     return modifyDate(MAX_TIME, date.getFullYear(), date.getMonth(), date.getDate());
   };

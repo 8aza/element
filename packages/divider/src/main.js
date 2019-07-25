@@ -25,10 +25,10 @@ export default {
     const $slots = context.slots();
     const { direction, contentPosition } = context.props;
     return (
-      <div class={['el-divider', `el-divider--${direction}`]}>
+      <div class={['baza-xls-divider', `baza-xls-divider--${direction}`]}>
         {
           $slots.default && direction !== 'vertical'
-            ? <div class={['el-divider__text', `is-${contentPosition}`]}>{$slots.default}</div>
+            ? <div class={['baza-xls-divider__text', `is-${contentPosition}`]}>{$slots.default}</div>
             : null
         }
       </div>

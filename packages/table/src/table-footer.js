@@ -44,7 +44,7 @@ export default {
 
     return (
       <table
-        class="el-table__footer"
+        class="baza-xls-table__footer"
         cellspacing="0"
         cellpadding="0"
         border="0">

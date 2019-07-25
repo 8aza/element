@@ -2,31 +2,31 @@
   <div
     @dragstart.prevent
     :class="[
-      'el-input-number',
-      inputNumberSize ? 'el-input-number--' + inputNumberSize : '',
+      'baza-xls-input-number',
+      inputNumberSize ? 'baza-xls-input-number--' + inputNumberSize : '',
       { 'is-disabled': inputNumberDisabled },
       { 'is-without-controls': !controls },
       { 'is-controls-right': controlsAtRight }
     ]">
     <span
-      class="el-input-number__decrease"
+      class="baza-xls-input-number__decrease"
       role="button"
       v-if="controls"
       v-repeat-click="decrease"
       :class="{'is-disabled': minDisabled}"
       @keydown.enter="decrease">
-      <i :class="`el-icon-${controlsAtRight ? 'arrow-down' : 'minus'}`"></i>
+      <i :class="`baza-xls-icon-${controlsAtRight ? 'arrow-down' : 'minus'}`"></i>
     </span>
     <span
-      class="el-input-number__increase"
+      class="baza-xls-input-number__increase"
       role="button"
       v-if="controls"
       v-repeat-click="increase"
       :class="{'is-disabled': maxDisabled}"
       @keydown.enter="increase">
-      <i :class="`el-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
+      <i :class="`baza-xls-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
     </span>
-    <el-input
+    <baza-xls-input
       ref="input"
       :value="displayValue"
       :placeholder="placeholder"
@@ -42,7 +42,7 @@
       @focus="handleFocus"
       @input="handleInput"
       @change="handleInputChange">
-    </el-input>
+    </baza-xls-input>
   </div>
 </template>
 <script>

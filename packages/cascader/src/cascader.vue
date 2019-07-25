@@ -2,8 +2,8 @@
   <div
     ref="reference"
     :class="[
-      'el-cascader',
-      realSize && `el-cascader--${realSize}`,
+      'baza-xls-cascader',
+      realSize && `baza-xls-cascader--${realSize}`,
       { 'is-disabled': isDisabled }
     ]"
     v-clickoutside="() => toggleDropDownVisible(false)"
@@ -12,7 +12,7 @@
     @click="() => toggleDropDownVisible(readonly ? undefined : true)"
     @keydown="handleKeyDown">
 
-    <el-input
+    <baza-xls-input
       ref="input"
       v-model="multiple ? presentText : inputValue"
       :size="realSize"
@@ -28,22 +28,22 @@
         <i
           v-if="clearBtnVisible"
           key="clear"
-          class="el-input__icon el-icon-circle-close"
+          class="baza-xls-input__icon baza-xls-icon-circle-close"
           @click.stop="handleClear"></i>
         <i
           v-else
           key="arrow-down"
           :class="[
-            'el-input__icon',
-            'el-icon-arrow-down',
+            'baza-xls-input__icon',
+            'baza-xls-icon-arrow-down',
             dropDownVisible && 'is-reverse'
           ]"
           @click.stop="toggleDropDownVisible()"></i>
       </template>
-    </el-input>
+    </baza-xls-input>
 
-    <div v-if="multiple" class="el-cascader__tags">
-      <el-tag
+    <div v-if="multiple" class="baza-xls-cascader__tags">
+      <baza-xls-tag
         v-for="(tag, index) in presentTags"
         :key="tag.key"
         type="info"
@@ -53,24 +53,24 @@
         disable-transitions
         @close="deleteTag(index)">
         <span>{{ tag.text }}</span>
-      </el-tag>
+      </baza-xls-tag>
       <input
         v-if="filterable && !isDisabled"
         v-model.trim="inputValue"
         type="text"
-        class="el-cascader__search-input"
+        class="baza-xls-cascader__search-input"
         :placeholder="presentTags.length ? '' : placeholder"
         @input="e => handleInput(inputValue, e)"
         @click.stop="toggleDropDownVisible(true)"
         @keydown.delete="handleDelete">
     </div>
 
-    <transition name="el-zoom-in-top" @after-leave="handleDropdownLeave">
+    <transition name="baza-xls-zoom-in-top" @after-leave="handleDropdownLeave">
       <div
         v-show="dropDownVisible"
         ref="popper"
-        :class="['el-popper', 'el-cascader__dropdown', popperClass]">
-        <el-cascader-panel
+        :class="['baza-xls-popper', 'baza-xls-cascader__dropdown', popperClass]">
+        <baza-xls-cascader-panel
           ref="panel"
           v-show="!filtering"
           v-model="checkedValue"
@@ -79,33 +79,33 @@
           :border="false"
           :render-label="$scopedSlots.default"
           @expand-change="handleExpandChange"
-          @close="toggleDropDownVisible(false)"></el-cascader-panel>
-        <el-scrollbar
+          @close="toggleDropDownVisible(false)"></baza-xls-cascader-panel>
+        <baza-xls-scrollbar
           ref="suggestionPanel"
           v-if="filterable"
           v-show="filtering"
           tag="ul"
-          class="el-cascader__suggestion-panel"
-          view-class="el-cascader__suggestion-list"
+          class="baza-xls-cascader__suggestion-panel"
+          view-class="baza-xls-cascader__suggestion-list"
           @keydown.native="handleSuggestionKeyDown">
           <template v-if="suggestions.length">
             <li
               v-for="(item, index) in suggestions"
               :key="item.uid"
               :class="[
-                'el-cascader__suggestion-item',
+                'baza-xls-cascader__suggestion-item',
                 item.checked && 'is-checked'
               ]"
               :tabindex="-1"
               @click="handleSuggestionClick(index)">
               <span>{{ item.text }}</span>
-              <i v-if="item.checked" class="el-icon-check"></i>
+              <i v-if="item.checked" class="baza-xls-icon-check"></i>
             </li>
           </template>
           <slot v-else name="empty">
-            <li class="el-cascader__empty-text">{{ t('el.cascader.noMatch') }}</li>
+            <li class="baza-xls-cascader__empty-text">{{ t('el.cascader.noMatch') }}</li>
           </slot>
-        </el-scrollbar>
+        </baza-xls-scrollbar>
       </div>
     </transition>
   </div>
@@ -452,10 +452,10 @@ export default {
         let firstNode = null;
 
         if (filtering && suggestionPanel) {
-          firstNode = suggestionPanel.$el.querySelector('.el-cascader__suggestion-item');
+          firstNode = suggestionPanel.$el.querySelector('.baza-xls-cascader__suggestion-item');
         } else {
-          const firstMenu = popper.querySelector('.el-cascader-menu');
-          firstNode = firstMenu.querySelector('.el-cascader-node[tabindex="-1"]');
+          const firstMenu = popper.querySelector('.baza-xls-cascader-menu');
+          firstNode = firstMenu.querySelector('.baza-xls-cascader-node[tabindex="-1"]');
         }
 
         if (firstNode) {
@@ -611,15 +611,15 @@ export default {
       if (this.$isServer || !$el) return;
 
       const { suggestionPanel } = this.$refs;
-      const inputInner = $el.querySelector('.el-input__inner');
+      const inputInner = $el.querySelector('.baza-xls-input__inner');
 
       if (!inputInner) return;
 
-      const tags = $el.querySelector('.el-cascader__tags');
+      const tags = $el.querySelector('.baza-xls-cascader__tags');
       let suggestionPanelEl = null;
 
       if (suggestionPanel && (suggestionPanelEl = suggestionPanel.$el)) {
-        const suggestionList = suggestionPanelEl.querySelector('.el-cascader__suggestion-list');
+        const suggestionList = suggestionPanelEl.querySelector('.baza-xls-cascader__suggestion-list');
         suggestionList.style.minWidth = inputInner.offsetWidth + 'px';
       }
 

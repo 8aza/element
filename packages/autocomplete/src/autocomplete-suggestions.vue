@@ -1,19 +1,19 @@
 <template>
-  <transition name="el-zoom-in-top" @after-leave="doDestroy">
+  <transition name="baza-xls-zoom-in-top" @after-leave="doDestroy">
     <div
       v-show="showPopper"
-      class="el-autocomplete-suggestion el-popper"
+      class="baza-xls-autocomplete-suggestion baza-xls-popper"
       :class="{ 'is-loading': !parent.hideLoading && parent.loading }"
       :style="{ width: dropdownWidth }"
       role="region">
-      <el-scrollbar
+      <baza-xls-scrollbar
         tag="ul"
-        wrap-class="el-autocomplete-suggestion__wrap"
-        view-class="el-autocomplete-suggestion__list">
-        <li v-if="!parent.hideLoading && parent.loading"><i class="el-icon-loading"></i></li>
+        wrap-class="baza-xls-autocomplete-suggestion__wrap"
+        view-class="baza-xls-autocomplete-suggestion__list">
+        <li v-if="!parent.hideLoading && parent.loading"><i class="baza-xls-icon-loading"></i></li>
         <slot v-else>
         </slot>
-      </el-scrollbar>
+      </baza-xls-scrollbar>
     </div>
   </transition>
 </template>
@@ -61,7 +61,7 @@
     mounted() {
       this.$parent.popperElm = this.popperElm = this.$el;
       this.referenceElm = this.$parent.$refs.input.$refs.input;
-      this.referenceList = this.$el.querySelector('.el-autocomplete-suggestion__list');
+      this.referenceList = this.$el.querySelector('.baza-xls-autocomplete-suggestion__list');
       this.referenceList.setAttribute('role', 'listbox');
       this.referenceList.setAttribute('id', this.id);
     },

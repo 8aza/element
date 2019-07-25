@@ -1,19 +1,19 @@
 <template>
-  <div class="el-image">
+  <div class="baza-xls-image">
     <slot v-if="loading" name="placeholder">
-      <div class="el-image__placeholder"></div>
+      <div class="baza-xls-image__placeholder"></div>
     </slot>
     <slot v-else-if="error" name="error">
-      <div class="el-image__error">{{ t('el.image.error') }}</div>
+      <div class="baza-xls-image__error">{{ t('el.image.error') }}</div>
     </slot>
     <img
       v-else
-      class="el-image__inner"
+      class="baza-xls-image__inner"
       v-bind="$attrs"
       v-on="$listeners"
       :src="src"
       :style="imageStyle"
-      :class="{ 'el-image__inner--center': alignCenter }">
+      :class="{ 'baza-xls-image__inner--center': alignCenter }">
   </div>
 </template>
 

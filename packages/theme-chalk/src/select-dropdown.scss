@@ -13,7 +13,7 @@
   margin: 5px 0;
 
   @include when(multiple) {
-    & .el-select-dropdown__item.selected {
+    & .baza-xls-select-dropdown__item.selected {
       color: $--select-option-selected-font-color;
       background-color: $--select-dropdown-background;
 
@@ -34,7 +34,7 @@
     }
   }
 
-  .el-scrollbar.is-empty .el-select-dropdown__list{
+  .baza-xls-scrollbar.is-empty .baza-xls-select-dropdown__list{
     padding: 0;
   }
 }

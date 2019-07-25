@@ -1,12 +1,12 @@
 <template>
-  <div class="el-page-header">
-    <div class="el-page-header__left" @click="$emit('back')">
-      <i class="el-icon-back"></i>
-      <div class="el-page-header__title">
+  <div class="baza-xls-page-header">
+    <div class="baza-xls-page-header__left" @click="$emit('back')">
+      <i class="baza-xls-icon-back"></i>
+      <div class="baza-xls-page-header__title">
         <slot name="title">{{ title }}</slot>
       </div>
     </div>
-    <div class="el-page-header__content">
+    <div class="baza-xls-page-header__content">
       <slot name="content">{{ content }}</slot>
     </div>
   </div>

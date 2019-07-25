@@ -1,12 +1,12 @@
 <template>
   <div
-    class="el-progress"
+    class="baza-xls-progress"
     :class="[
-      'el-progress--' + type,
+      'baza-xls-progress--' + type,
       status ? 'is-' + status : '',
       {
-        'el-progress--without-text': !showText,
-        'el-progress--text-inside': textInside,
+        'baza-xls-progress--without-text': !showText,
+        'baza-xls-progress--text-inside': textInside,
       }
     ]"
     role="progressbar"
@@ -14,24 +14,24 @@
     aria-valuemin="0"
     aria-valuemax="100"
   >
-    <div class="el-progress-bar" v-if="type === 'line'">
-      <div class="el-progress-bar__outer" :style="{height: strokeWidth + 'px'}">
-        <div class="el-progress-bar__inner" :style="barStyle">
-          <div class="el-progress-bar__innerText" v-if="showText && textInside">{{content}}</div>
+    <div class="baza-xls-progress-bar" v-if="type === 'line'">
+      <div class="baza-xls-progress-bar__outer" :style="{height: strokeWidth + 'px'}">
+        <div class="baza-xls-progress-bar__inner" :style="barStyle">
+          <div class="baza-xls-progress-bar__innerText" v-if="showText && textInside">{{content}}</div>
         </div>
       </div>
     </div>
-    <div class="el-progress-circle" :style="{height: width + 'px', width: width + 'px'}" v-else>
+    <div class="baza-xls-progress-circle" :style="{height: width + 'px', width: width + 'px'}" v-else>
       <svg viewBox="0 0 100 100">
         <path
-          class="el-progress-circle__track"
+          class="baza-xls-progress-circle__track"
           :d="trackPath"
           stroke="#e5e9f2"
           :stroke-width="relativeStrokeWidth"
           fill="none"
           :style="trailPathStyle"></path>
         <path
-          class="el-progress-circle__path"
+          class="baza-xls-progress-circle__path"
           :d="trackPath"
           :stroke="stroke"
           fill="none"
@@ -41,7 +41,7 @@
       </svg>
     </div>
     <div
-      class="el-progress__text"
+      class="baza-xls-progress__text"
       v-if="showText && !textInside"
       :style="{fontSize: progressTextSize + 'px'}"
     >
@@ -164,12 +164,12 @@
       },
       iconClass() {
         if (this.status === 'warning') {
-          return 'el-icon-warning';
+          return 'baza-xls-icon-warning';
         }
         if (this.type === 'line') {
-          return this.status === 'success' ? 'el-icon-circle-check' : 'el-icon-circle-close';
+          return this.status === 'success' ? 'baza-xls-icon-circle-check' : 'baza-xls-icon-circle-close';
         } else {
-          return this.status === 'success' ? 'el-icon-check' : 'el-icon-close';
+          return this.status === 'success' ? 'baza-xls-icon-check' : 'baza-xls-icon-close';
         }
       },
       progressTextSize() {
