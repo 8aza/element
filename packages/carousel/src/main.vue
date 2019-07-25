@@ -8,7 +8,7 @@
       :style="{ height: height }">
       <transition
         v-if="arrowDisplay"
-        name="carousbaza-xls-arrow-left">
+        name="carousel-arrow-left">
         <button
           type="button"
           v-show="(arrow === 'always' || hover) && (loop || activeIndex > 0)"
@@ -21,7 +21,7 @@
       </transition>
       <transition
         v-if="arrowDisplay"
-        name="carousbaza-xls-arrow-right">
+        name="carousel-arrow-right">
         <button
           type="button"
           v-show="(arrow === 'always' || hover) && (loop || activeIndex < items.length - 1)"
@@ -122,9 +122,9 @@ export default {
     },
 
     carouselClasses() {
-      const classes = ['baza-xls-carousel', 'baza-xls-carousbaza-xls--' + this.direction];
+      const classes = ['baza-xls-carousel', 'baza-xls-carousel--' + this.direction];
       if (this.type === 'card') {
-        classes.push('baza-xls-carousbaza-xls--card');
+        classes.push('baza-xls-carousel--card');
       }
       return classes;
     },

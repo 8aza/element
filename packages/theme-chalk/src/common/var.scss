@@ -832,17 +832,17 @@ $--scrollbar-hover-background-color: rgba($--color-text-secondary, .5) !default;
 /* Carousel
 --------------------------*/
 /// fontSize||Font|1
-$--carousbaza-xls-arrow-font-size: 12px !default;
-$--carousbaza-xls-arrow-size: 36px !default;
-$--carousbaza-xls-arrow-background: rgba(31, 45, 61, 0.11) !default;
-$--carousbaza-xls-arrow-hover-background: rgba(31, 45, 61, 0.23) !default;
+$--carousel-arrow-font-size: 12px !default;
+$--carousel-arrow-size: 36px !default;
+$--carousel-arrow-background: rgba(31, 45, 61, 0.11) !default;
+$--carousel-arrow-hover-background: rgba(31, 45, 61, 0.23) !default;
 /// width||Other|4
-$--carousbaza-xls-indicator-width: 30px !default;
+$--carousel-indicator-width: 30px !default;
 /// height||Other|4
-$--carousbaza-xls-indicator-height: 2px !default;
-$--carousbaza-xls-indicator-padding-horizontal: 4px !default;
-$--carousbaza-xls-indicator-padding-vertical: 12px !default;
-$--carousbaza-xls-indicator-out-color: $--border-color-hover !default;
+$--carousel-indicator-height: 2px !default;
+$--carousel-indicator-padding-horizontal: 4px !default;
+$--carousel-indicator-padding-vertical: 12px !default;
+$--carousel-indicator-out-color: $--border-color-hover !default;
 
 /* Collapse
 --------------------------*/
