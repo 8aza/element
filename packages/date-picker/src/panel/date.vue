@@ -20,7 +20,7 @@
         <div class="baza-xls-picker-panel__body">
           <div class="baza-xls-date-picker__time-header" v-if="showTime">
             <span class="baza-xls-date-picker__editor-wrap">
-              <baza-xls-input
+              <el-input
                 :placeholder="t('el.datepicker.selectDate')"
                 :value="visibleDate"
                 size="small"
@@ -28,7 +28,7 @@
                 @change="handleVisibleDateChange" />
             </span>
             <span class="baza-xls-date-picker__editor-wrap" v-clickoutside="handleTimePickClose">
-              <baza-xls-input
+              <el-input
                 ref="input"
                 @focus="timePickerVisible = true"
                 :placeholder="t('el.datepicker.selectTime')"
@@ -121,21 +121,21 @@
       <div
         class="baza-xls-picker-panel__footer"
         v-show="footerVisible && currentView === 'date'">
-        <baza-xls-button
+        <el-button
           size="mini"
           type="text"
           class="baza-xls-picker-panel__link-btn"
           @click="changeToNow"
           v-show="selectionMode !== 'dates'">
           {{ t('el.datepicker.now') }}
-        </baza-xls-button>
-        <baza-xls-button
+        </el-button>
+        <el-button
           plain
           size="mini"
           class="baza-xls-picker-panel__link-btn"
           @click="confirm">
           {{ t('el.datepicker.confirm') }}
-        </baza-xls-button>
+        </el-button>
       </div>
     </div>
   </transition>

@@ -11,28 +11,28 @@
       <predefine v-if="predefine" :color="color" :colors="predefine"></predefine>
       <div class="baza-xls-color-dropdown__btns">
         <span class="baza-xls-color-dropdown__value">
-          <baza-xls-input
+          <el-input
             v-model="customInput"
             @keyup.native.enter="handleConfirm"
             @blur="handleConfirm"
             :validate-event="false"
             size="mini">
-          </baza-xls-input>
+          </el-input>
         </span>
-        <baza-xls-button
+        <el-button
           size="mini"
           type="text"
           class="baza-xls-color-dropdown__link-btn"
           @click="$emit('clear')">
           {{ t('el.colorpicker.clear') }}
-        </baza-xls-button>
-        <baza-xls-button
+        </el-button>
+        <el-button
           plain
           size="mini"
           class="baza-xls-color-dropdown__btn"
           @click="confirmValue">
           {{ t('el.colorpicker.confirm') }}
-        </baza-xls-button>
+        </el-button>
       </div>
     </div>
   </transition>

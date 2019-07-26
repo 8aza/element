@@ -21,7 +21,7 @@
           <div class="baza-xls-date-range-picker__time-header" v-if="showTime">
             <span class="baza-xls-date-range-picker__editors-wrap">
               <span class="baza-xls-date-range-picker__time-picker-wrap">
-                <baza-xls-input
+                <el-input
                   size="small"
                   :disabled="rangeState.selecting"
                   ref="minInput"
@@ -32,7 +32,7 @@
                   @change="val => handleDateChange(val, 'min')" />
               </span>
               <span class="baza-xls-date-range-picker__time-picker-wrap" v-clickoutside="handleMinTimeClose">
-                <baza-xls-input
+                <el-input
                   size="small"
                   class="baza-xls-date-range-picker__editor"
                   :disabled="rangeState.selecting"
@@ -53,7 +53,7 @@
             <span class="baza-xls-icon-arrow-right"></span>
             <span class="baza-xls-date-range-picker__editors-wrap is-right">
               <span class="baza-xls-date-range-picker__time-picker-wrap">
-                <baza-xls-input
+                <el-input
                   size="small"
                   class="baza-xls-date-range-picker__editor"
                   :disabled="rangeState.selecting"
@@ -64,7 +64,7 @@
                   @change="val => handleDateChange(val, 'max')" />
               </span>
               <span class="baza-xls-date-range-picker__time-picker-wrap" v-clickoutside="handleMaxTimeClose">
-                <baza-xls-input
+                <el-input
                   size="small"
                   class="baza-xls-date-range-picker__editor"
                   :disabled="rangeState.selecting"
@@ -165,21 +165,21 @@
         </div>
       </div>
       <div class="baza-xls-picker-panel__footer" v-if="showTime">
-        <baza-xls-button
+        <el-button
           size="mini"
           type="text"
           class="baza-xls-picker-panel__link-btn"
           @click="handleClear">
           {{ t('el.datepicker.clear') }}
-        </baza-xls-button>
-        <baza-xls-button
+        </el-button>
+        <el-button
           plain
           size="mini"
           class="baza-xls-picker-panel__link-btn"
           :disabled="btnDisabled"
           @click="handleConfirm(false)">
           {{ t('el.datepicker.confirm') }}
-        </baza-xls-button>
+        </el-button>
       </div>
     </div>
   </transition>

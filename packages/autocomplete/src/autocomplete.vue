@@ -7,7 +7,7 @@
     :aria-expanded="suggestionVisible"
     :aria-owns="id"
   >
-    <baza-xls-input
+    <el-input
       ref="input"
       v-bind="[$props, $attrs]"
       @input="handleChange"
@@ -31,8 +31,8 @@
       <template slot="suffix" v-if="$slots.suffix">
         <slot name="suffix"></slot>
       </template>
-    </baza-xls-input>
-    <baza-xls-autocomplete-suggestions
+    </el-input>
+    <el-autocomplete-suggestions
       visible-arrow
       :class="[popperClass ? popperClass : '']"
       :popper-options="popperOptions"
@@ -53,7 +53,7 @@
           {{ item[valueKey] }}
         </slot>
       </li>
-    </baza-xls-autocomplete-suggestions>
+    </el-autocomplete-suggestions>
   </div>
 </template>
 <script>

@@ -130,12 +130,12 @@
         }
 
         return (
-          <baza-xls-checkbox
+          <el-checkbox
             value={ node.checked }
             indeterminate={ node.indeterminate }
             disabled={ isDisabled }
             { ...events }
-          ></baza-xls-checkbox>
+          ></el-checkbox>
         );
       },
 
@@ -148,7 +148,7 @@
         }
 
         return (
-          <baza-xls-radio
+          <el-radio
             value={ checkedValue }
             label={ value }
             disabled={ isDisabled }
@@ -156,7 +156,7 @@
             nativeOnClick={ stopPropagation }>
             {/* add an empty element to avoid render label */}
             <span></span>
-          </baza-xls-radio>
+          </el-radio>
         );
       },
 

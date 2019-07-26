@@ -48,7 +48,7 @@ export default {
               return acc.concat(this.wrappedRowRender(row, acc.length));
             }, [])
           }
-          <baza-xls-tooltip effect={ this.table.tooltipEffect } placement="top" ref="tooltip" content={ this.tooltipContent }></baza-xls-tooltip>
+          <el-tooltip effect={ this.table.tooltipEffect } placement="top" ref="tooltip" content={ this.tooltipContent }></el-tooltip>
         </tbody>
       </table>
     );

@@ -11,22 +11,22 @@
       <slot name="left-footer"></slot>
     </transfer-panel>
     <div class="baza-xls-transfer__buttons">
-      <baza-xls-button
+      <el-button
         type="primary"
         :class="['baza-xls-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
         @click.native="addToLeft"
         :disabled="rightChecked.length === 0">
         <i class="baza-xls-icon-arrow-left"></i>
         <span v-if="buttonTexts[0] !== undefined">{{ buttonTexts[0] }}</span>
-      </baza-xls-button>
-      <baza-xls-button
+      </el-button>
+      <el-button
         type="primary"
         :class="['baza-xls-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
         @click.native="addToRight"
         :disabled="leftChecked.length === 0">
         <span v-if="buttonTexts[1] !== undefined">{{ buttonTexts[1] }}</span>
         <i class="baza-xls-icon-arrow-right"></i>
-      </baza-xls-button>
+      </el-button>
     </div>
     <transfer-panel
       v-bind="$props"

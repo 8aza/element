@@ -7,26 +7,26 @@
       <div
         class="baza-xls-calendar__button-group"
         v-if="validatedRange.length === 0">
-        <baza-xls-button-group>
-          <baza-xls-button
+        <el-button-group>
+          <el-button
             type="plain"
             size="mini"
             @click="selectDate('prev-month')">
             {{ t('el.datepicker.prevMonth') }}
-          </baza-xls-button>
-          <baza-xls-button
+          </el-button>
+          <el-button
             type="plain"
             size="mini"
             @click="selectDate('today')">
             {{ t('el.datepicker.today') }}
-          </baza-xls-button>
-          <baza-xls-button
+          </el-button>
+          <el-button
             type="plain"
             size="mini"
             @click="selectDate('next-month')">
             {{ t('el.datepicker.nextMonth') }}
-          </baza-xls-button>
-        </baza-xls-button-group>
+          </el-button>
+        </el-button-group>
       </div>
     </div>
     <div

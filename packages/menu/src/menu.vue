@@ -25,9 +25,9 @@
 
       if (this.collapseTransition) {
         return (
-          <baza-xls-menu-collapse-transition>
+          <el-menu-collapse-transition>
             { component }
-          </baza-xls-menu-collapse-transition>
+          </el-menu-collapse-transition>
         );
       } else {
         return component;

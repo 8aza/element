@@ -259,14 +259,14 @@
 
       let triggerElm = !splitButton
         ? this.$slots.default
-        : (<baza-xls-button-group>
-          <baza-xls-button type={type} size={dropdownSize} nativeOn-click={handleMainButtonClick}>
+        : (<el-button-group>
+          <el-button type={type} size={dropdownSize} nativeOn-click={handleMainButtonClick}>
             {this.$slots.default}
-          </baza-xls-button>
-          <baza-xls-button ref="trigger" type={type} size={dropdownSize} class="baza-xls-dropdown__caret-button">
+          </el-button>
+          <el-button ref="trigger" type={type} size={dropdownSize} class="baza-xls-dropdown__caret-button">
             <i class="baza-xls-dropdown__icon baza-xls-icon-arrow-down"></i>
-          </baza-xls-button>
-        </baza-xls-button-group>);
+          </el-button>
+        </el-button-group>);
 
       return (
         <div class="baza-xls-dropdown" v-clickoutside={hide}>

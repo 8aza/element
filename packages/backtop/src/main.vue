@@ -9,7 +9,7 @@
       }"
       class="baza-xls-backtop">
       <slot>
-        <baza-xls-icon name="caret-top"></baza-xls-icon>
+        <el-icon name="caret-top"></el-icon>
       </slot>
     </div>
   </transition>

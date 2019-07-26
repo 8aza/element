@@ -171,7 +171,7 @@ export default {
       render(h) {
         return (
           <span class="baza-xls-pagination__sizes">
-            <baza-xls-select
+            <el-select
               value={ this.$parent.internalPageSize }
               popperClass={ this.$parent.popperClass || '' }
               size="mini"
@@ -179,13 +179,13 @@ export default {
               disabled={ this.$parent.disabled }>
               {
                 this.pageSizes.map(item =>
-                  <baza-xls-option
+                  <el-option
                     value={ item }
                     label={ item + this.t('el.pagination.pagesize') }>
-                  </baza-xls-option>
+                  </el-option>
                 )
               }
-            </baza-xls-select>
+            </el-select>
           </span>
         );
       },
@@ -247,7 +247,7 @@ export default {
         return (
           <span class="baza-xls-pagination__jump">
             { this.t('el.pagination.goto') }
-            <baza-xls-input
+            <el-input
               class="baza-xls-pagination__editor is-in-pagination"
               min={ 1 }
               max={ this.$parent.internalPageCount }

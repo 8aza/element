@@ -39,17 +39,17 @@
             </slot>
           </div>
           <div class="baza-xls-message-box__input" v-show="showInput">
-            <baza-xls-input
+            <el-input
               v-model="inputValue"
               :type="inputType"
               @keydown.enter.native="handleInputEnter"
               :placeholder="inputPlaceholder"
-              ref="input"></baza-xls-input>
+              ref="input"></el-input>
             <div class="baza-xls-message-box__errormsg" :style="{ visibility: !!editorErrorMessage ? 'visible' : 'hidden' }">{{ editorErrorMessage }}</div>
           </div>
         </div>
         <div class="baza-xls-message-box__btns">
-          <baza-xls-button
+          <el-button
             :loading="cancelButtonLoading"
             :class="[ cancelButtonClasses ]"
             v-if="showCancelButton"
@@ -58,8 +58,8 @@
             @click.native="handleAction('cancel')"
             @keydown.enter="handleAction('cancel')">
             {{ cancelButtonText || t('el.messagebox.cancel') }}
-          </baza-xls-button>
-          <baza-xls-button
+          </el-button>
+          <el-button
             :loading="confirmButtonLoading"
             ref="confirm"
             :class="[ confirmButtonClasses ]"
@@ -69,7 +69,7 @@
             @click.native="handleAction('confirm')"
             @keydown.enter="handleAction('confirm')">
             {{ confirmButtonText || t('el.messagebox.confirm') }}
-          </baza-xls-button>
+          </el-button>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <baza-xls-input
+  <el-input
     class="baza-xls-date-editor"
     :class="'baza-xls-date-editor--' + type"
     :readonly="!editable || readonly || type === 'dates' || type === 'week'"
@@ -30,7 +30,7 @@
       :class="[showClose ? '' + clearIcon : '']"
       v-if="haveTrigger">
     </i>
-  </baza-xls-input>
+  </el-input>
   <div
     class="baza-xls-date-editor baza-xls-range-editor baza-xls-input__inner"
     :class="[

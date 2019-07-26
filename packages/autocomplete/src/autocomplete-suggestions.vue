@@ -6,14 +6,14 @@
       :class="{ 'is-loading': !parent.hideLoading && parent.loading }"
       :style="{ width: dropdownWidth }"
       role="region">
-      <baza-xls-scrollbar
+      <el-scrollbar
         tag="ul"
         wrap-class="baza-xls-autocomplete-suggestion__wrap"
         view-class="baza-xls-autocomplete-suggestion__list">
         <li v-if="!parent.hideLoading && parent.loading"><i class="baza-xls-icon-loading"></i></li>
         <slot v-else>
         </slot>
-      </baza-xls-scrollbar>
+      </el-scrollbar>
     </div>
   </transition>
 </template>

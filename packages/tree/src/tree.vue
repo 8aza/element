@@ -9,7 +9,7 @@
     }"
     role="tree"
   >
-    <baza-xls-tree-node
+    <el-tree-node
       v-for="child in root.childNodes"
       :node="child"
       :props="props"
@@ -18,7 +18,7 @@
       :key="getNodeKey(child)"
       :render-content="renderContent"
       @node-expand="handleNodeExpand">
-    </baza-xls-tree-node>
+    </el-tree-node>
     <div class="baza-xls-tree__empty-block" v-if="isEmpty">
       <span class="baza-xls-tree__empty-text">{{ emptyText }}</span>
     </div>

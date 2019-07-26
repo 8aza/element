@@ -36,12 +36,12 @@
         </label>
         <i class="baza-xls-icon-close" v-if="!disabled" @click="$emit('remove', file)"></i>
         <i class="baza-xls-icon-close-tip" v-if="!disabled">{{ t('el.upload.deleteTip') }}</i> <!--因为close按钮只在li:focus的时候 display, li blur后就不存在了，所以键盘导航时永远无法 focus到 close按钮上-->
-        <baza-xls-progress
+        <el-progress
           v-if="file.status === 'uploading'"
           :type="listType === 'picture-card' ? 'circle' : 'line'"
           :stroke-width="listType === 'picture-card' ? 6 : 2"
           :percentage="parsePercentage(file.percentage)">
-        </baza-xls-progress>
+        </el-progress>
         <span class="baza-xls-upload-list__item-actions" v-if="listType === 'picture-card'">
           <span
             class="baza-xls-upload-list__item-preview"

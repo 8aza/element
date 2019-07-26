@@ -26,7 +26,7 @@
       @keydown.enter="increase">
       <i :class="`baza-xls-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
     </span>
-    <baza-xls-input
+    <el-input
       ref="input"
       :value="displayValue"
       :placeholder="placeholder"
@@ -42,7 +42,7 @@
       @focus="handleFocus"
       @input="handleInput"
       @change="handleInputChange">
-    </baza-xls-input>
+    </el-input>
   </div>
 </template>
 <script>

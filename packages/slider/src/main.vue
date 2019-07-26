@@ -8,7 +8,7 @@
     :aria-orientation="vertical ? 'vertical': 'horizontal'"
     :aria-disabled="sliderDisabled"
   >
-    <baza-xls-input-number
+    <el-input-number
       v-model="firstValue"
       v-if="showInput && !range"
       class="baza-xls-slider__input"
@@ -21,7 +21,7 @@
       :max="max"
       :debounce="debounce"
       :size="inputSize">
-    </baza-xls-input-number>
+    </el-input-number>
     <div
       class="baza-xls-slider__runway"
       :class="{ 'show-input': showInput, 'disabled': sliderDisabled }"

@@ -6,14 +6,14 @@
       :style="{ width: width + 'px' }"
       :class="popperClass"
       class="baza-xls-picker-panel time-select baza-xls-popper">
-      <baza-xls-scrollbar noresize wrap-class="baza-xls-picker-panel__content">
+      <el-scrollbar noresize wrap-class="baza-xls-picker-panel__content">
         <div class="time-select-item"
           v-for="item in items"
           :class="{ selected: value === item.value, disabled: item.disabled, default: item.value === defaultValue }"
           :disabled="item.disabled"
           :key="item.value"
           @click="handleClick(item)">{{ item.value }}</div>
-      </baza-xls-scrollbar>
+      </el-scrollbar>
     </div>
   </transition>
 </template>

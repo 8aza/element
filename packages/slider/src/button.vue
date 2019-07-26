@@ -16,14 +16,14 @@
     @keydown.down.prevent="onLeftKeyDown"
     @keydown.up.prevent="onRightKeyDown"
   >
-    <baza-xls-tooltip
+    <el-tooltip
       placement="top"
       ref="tooltip"
       :popper-class="tooltipClass"
       :disabled="!showTooltip">
       <span slot="content">{{ formatValue }}</span>
       <div class="baza-xls-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }"></div>
-    </baza-xls-tooltip>
+    </el-tooltip>
   </div>
 </template>
 

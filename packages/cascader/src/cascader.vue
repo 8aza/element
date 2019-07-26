@@ -12,7 +12,7 @@
     @click="() => toggleDropDownVisible(readonly ? undefined : true)"
     @keydown="handleKeyDown">
 
-    <baza-xls-input
+    <el-input
       ref="input"
       v-model="multiple ? presentText : inputValue"
       :size="realSize"
@@ -40,10 +40,10 @@
           ]"
           @click.stop="toggleDropDownVisible()"></i>
       </template>
-    </baza-xls-input>
+    </el-input>
 
     <div v-if="multiple" class="baza-xls-cascader__tags">
-      <baza-xls-tag
+      <el-tag
         v-for="(tag, index) in presentTags"
         :key="tag.key"
         type="info"
@@ -53,7 +53,7 @@
         disable-transitions
         @close="deleteTag(index)">
         <span>{{ tag.text }}</span>
-      </baza-xls-tag>
+      </el-tag>
       <input
         v-if="filterable && !isDisabled"
         v-model.trim="inputValue"
@@ -70,7 +70,7 @@
         v-show="dropDownVisible"
         ref="popper"
         :class="['baza-xls-popper', 'baza-xls-cascader__dropdown', popperClass]">
-        <baza-xls-cascader-panel
+        <el-cascader-panel
           ref="panel"
           v-show="!filtering"
           v-model="checkedValue"
@@ -79,8 +79,8 @@
           :border="false"
           :render-label="$scopedSlots.default"
           @expand-change="handleExpandChange"
-          @close="toggleDropDownVisible(false)"></baza-xls-cascader-panel>
-        <baza-xls-scrollbar
+          @close="toggleDropDownVisible(false)"></el-cascader-panel>
+        <el-scrollbar
           ref="suggestionPanel"
           v-if="filterable"
           v-show="filtering"
@@ -105,7 +105,7 @@
           <slot v-else name="empty">
             <li class="baza-xls-cascader__empty-text">{{ t('el.cascader.noMatch') }}</li>
           </slot>
-        </baza-xls-scrollbar>
+        </el-scrollbar>
       </div>
     </transition>
   </div>

@@ -34,7 +34,7 @@
         ]"
       >
       </span>
-      <baza-xls-checkbox
+      <el-checkbox
         v-if="showCheckbox"
         v-model="node.checked"
         :indeterminate="node.indeterminate"
@@ -42,7 +42,7 @@
         @click.native.stop
         @change="handleCheckChange"
       >
-      </baza-xls-checkbox>
+      </el-checkbox>
       <span
         v-if="node.loading"
         class="baza-xls-tree-node__loading-icon baza-xls-icon-loading">
@@ -57,7 +57,7 @@
         role="group"
         :aria-expanded="expanded"
       >
-        <baza-xls-tree-node
+        <el-tree-node
           :render-content="renderContent"
           v-for="child in node.childNodes"
           :render-after-expand="renderAfterExpand"
@@ -65,7 +65,7 @@
           :key="getNodeKey(child)"
           :node="child"
           @node-expand="handleChildNodeExpand">
-        </baza-xls-tree-node>
+        </el-tree-node>
       </div>
     </el-collapse-transition>
   </div>

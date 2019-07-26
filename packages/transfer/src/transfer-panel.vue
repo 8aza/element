@@ -1,17 +1,17 @@
 <template>
   <div class="baza-xls-transfer-panel">
     <p class="baza-xls-transfer-panel__header">
-      <baza-xls-checkbox
+      <el-checkbox
         v-model="allChecked"
         @change="handleAllCheckedChange"
         :indeterminate="isIndeterminate">
         {{ title }}
         <span>{{ checkedSummary }}</span>
-      </baza-xls-checkbox>
+      </el-checkbox>
     </p>
 
     <div :class="['baza-xls-transfer-panel__body', hasFooter ? 'is-with-footer' : '']">
-      <baza-xls-input
+      <el-input
         class="baza-xls-transfer-panel__filter"
         v-model="query"
         size="small"
@@ -23,21 +23,21 @@
           :class="['baza-xls-input__icon', 'baza-xls-icon-' + inputIcon]"
           @click="clearQuery"
         ></i>
-      </baza-xls-input>
-      <baza-xls-checkbox-group
+      </el-input>
+      <el-checkbox-group
         v-model="checked"
         v-show="!hasNoMatch && data.length > 0"
         :class="{ 'is-filterable': filterable }"
         class="baza-xls-transfer-panel__list">
-        <baza-xls-checkbox
+        <el-checkbox
           class="baza-xls-transfer-panel__item"
           :label="item[keyProp]"
           :disabled="item[disabledProp]"
           :key="item[keyProp]"
           v-for="item in filteredData">
           <option-content :option="item"></option-content>
-        </baza-xls-checkbox>
-      </baza-xls-checkbox-group>
+        </el-checkbox>
+      </el-checkbox-group>
       <p
         class="baza-xls-transfer-panel__empty"
         v-show="hasNoMatch">{{ t('el.transfer.noMatch') }}</p>

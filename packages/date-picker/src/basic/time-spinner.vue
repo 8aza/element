@@ -1,7 +1,7 @@
 <template>
   <div class="baza-xls-time-spinner" :class="{ 'has-seconds': showSeconds }">
     <template v-if="!arrowControl">
-      <baza-xls-scrollbar
+      <el-scrollbar
         @mouseenter.native="emitSelectRange('hours')"
         @mousemove.native="adjustCurrentSpinner('hours')"
         class="baza-xls-time-spinner__wrapper"
@@ -16,8 +16,8 @@
           class="baza-xls-time-spinner__item"
           :key="hour"
           :class="{ 'active': hour === hours, 'disabled': disabled }">{{ ('0' + (amPmMode ? (hour % 12 || 12) : hour )).slice(-2) }}{{ amPm(hour) }}</li>
-      </baza-xls-scrollbar>
-      <baza-xls-scrollbar
+      </el-scrollbar>
+      <el-scrollbar
         @mouseenter.native="emitSelectRange('minutes')"
         @mousemove.native="adjustCurrentSpinner('minutes')"
         class="baza-xls-time-spinner__wrapper"
@@ -32,8 +32,8 @@
           :key="key"
           class="baza-xls-time-spinner__item"
           :class="{ 'active': key === minutes, disabled: !enabled }">{{ ('0' + key).slice(-2) }}</li>
-      </baza-xls-scrollbar>
-      <baza-xls-scrollbar
+      </el-scrollbar>
+      <el-scrollbar
         v-show="showSeconds"
         @mouseenter.native="emitSelectRange('seconds')"
         @mousemove.native="adjustCurrentSpinner('seconds')"
@@ -49,7 +49,7 @@
           class="baza-xls-time-spinner__item"
           :class="{ 'active': key === seconds }"
           :key="key">{{ ('0' + key).slice(-2) }}</li>
-      </baza-xls-scrollbar>
+      </el-scrollbar>
     </template>
     <template v-if="arrowControl">
       <div

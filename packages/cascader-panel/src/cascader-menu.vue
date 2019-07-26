@@ -119,7 +119,7 @@ export default {
     }
 
     return (
-      <baza-xls-scrollbar
+      <el-scrollbar
         tag="ul"
         role="menu"
         id={ menuId }
@@ -131,7 +131,7 @@ export default {
         }}
         { ...events }>
         { isEmpty ? this.renderEmptyText(h) : this.renderNodeList(h) }
-      </baza-xls-scrollbar>
+      </el-scrollbar>
     );
   }
 };

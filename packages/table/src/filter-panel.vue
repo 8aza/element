@@ -6,14 +6,14 @@
       v-clickoutside="handleOutsideClick"
       v-show="showPopper">
       <div class="baza-xls-table-filter__content">
-        <baza-xls-scrollbar wrap-class="baza-xls-table-filter__wrap">
-          <baza-xls-checkbox-group class="baza-xls-table-filter__checkbox-group" v-model="filteredValue">
-            <baza-xls-checkbox
+        <el-scrollbar wrap-class="baza-xls-table-filter__wrap">
+          <el-checkbox-group class="baza-xls-table-filter__checkbox-group" v-model="filteredValue">
+            <el-checkbox
               v-for="filter in filters"
               :key="filter.value"
-              :label="filter.value">{{ filter.text }}</baza-xls-checkbox>
-          </baza-xls-checkbox-group>
-        </baza-xls-scrollbar>
+              :label="filter.value">{{ filter.text }}</el-checkbox>
+          </el-checkbox-group>
+        </el-scrollbar>
       </div>
       <div class="baza-xls-table-filter__bottom">
         <button @click="handleConfirm"
