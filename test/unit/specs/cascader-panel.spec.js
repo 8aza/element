@@ -88,10 +88,10 @@ const options2 = [{
   }]
 }];
 
-const getMenus = el => el.querySelectorAll('.el-cascader-menu');
-const getOptions = (el, menuIndex) => getMenus(el)[menuIndex].querySelectorAll('.el-cascader-node');
-const getValidOptions = (el, menuIndex) => getMenus(el)[menuIndex].querySelectorAll('.el-cascader-node[tabindex="-1"]');
-const getLabel = el => el.querySelector('.el-cascader-node__label').textContent;
+const getMenus = el => el.querySelectorAll('.baza-xls-cascader-menu');
+const getOptions = (el, menuIndex) => getMenus(el)[menuIndex].querySelectorAll('.baza-xls-cascader-node');
+const getValidOptions = (el, menuIndex) => getMenus(el)[menuIndex].querySelectorAll('.baza-xls-cascader-node[tabindex="-1"]');
+const getLabel = el => el.querySelector('.baza-xls-cascader-node__label').textContent;
 
 describe('CascaderPanel', () => {
   let vm;

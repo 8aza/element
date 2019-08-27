@@ -453,7 +453,7 @@ Désactivez une option en définissant un champ `disabled` dans l'objet d'option
 
 ### Clearable
 
-Définissez l'attribut `clearable` pour` el-cascader` et une icône claire apparaîtra une fois sélectionnée et survolée
+Définissez l'attribut `clearable` pour` baza-xls-cascader` et une icône claire apparaîtra une fois sélectionnée et survolée
 
 :::demo
 ```html
@@ -1250,7 +1250,7 @@ Charge dynamiquement ses noeuds enfants lorsque un noeud est sélectionné.
 
 Rechercher et sélectionner des options avec un mot clé.
 
-:::demo Ajouter `filterable` à` el-cascader` permet le filtrage. Cascader recherchera les noeuds dont l'étiquette ou l'étiquette du parent (selon `show-all-levels`) inclut le mot-clé input. Bien sûr, vous pouvez personnaliser la logique de recherche en utilisant `filter-method` qui accepte une fonction, le premier paramètre est `node`, le second est `keyword` et doit renvoyer une valeur booléenne indiquant si le résultat est positif.
+:::demo Ajouter `filterable` à` baza-xls-cascader` permet le filtrage. Cascader recherchera les noeuds dont l'étiquette ou l'étiquette du parent (selon `show-all-levels`) inclut le mot-clé input. Bien sûr, vous pouvez personnaliser la logique de recherche en utilisant `filter-method` qui accepte une fonction, le premier paramètre est `node`, le second est `keyword` et doit renvoyer une valeur booléenne indiquant si le résultat est positif.
 ```html
 <div class="block">
   <span class="demonstration">Filtrable (Sélection unique)</span>
@@ -1697,7 +1697,7 @@ Vous pouvez personnaliser le contenu du noeud cascader.
 
 `CascaderPanel` est le composant principal de` Cascader`. Il comporte diverses fonctionnalités telles que la sélection unique, la sélection multiple, le chargement dynamique, etc.
 
-:::demo Tout comme `el-cascader`, vous pouvez définir des options alternatives par `options`, et activer d'autres fonctionnalités par `props`, voir le formulaire d'API ci-dessous pour plus de détails.
+:::demo Tout comme `baza-xls-cascader`, vous pouvez définir des options alternatives par `options`, et activer d'autres fonctionnalités par `props`, voir le formulaire d'API ci-dessous pour plus de détails.
 ```html
 <el-cascader-panel :options="options"></el-cascader-panel>
 

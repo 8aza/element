@@ -47,8 +47,8 @@ const options = [{
   }]
 }];
 
-const getMenus = el => el.querySelectorAll('.el-cascader-menu');
-const getOptions = (el, menuIndex) => getMenus(el)[menuIndex].querySelectorAll('.el-cascader-node');
+const getMenus = el => el.querySelectorAll('.baza-xls-cascader-menu');
+const getOptions = (el, menuIndex) => getMenus(el)[menuIndex].querySelectorAll('.baza-xls-cascader-node');
 const selectedValue = ['zhejiang', 'hangzhou', 'xihu'];
 
 describe('Cascader', () => {
@@ -362,9 +362,9 @@ describe('Cascader', () => {
     input.value = 'Zhejiang';
     triggerEvent(input, 'input');
     await wait(300);
-    expect(body.querySelector('.el-cascader__suggestion-list')).to.exist;
-    expect(body.querySelectorAll('.el-cascader__suggestion-item').length).to.equal(3);
-    body.querySelectorAll('.el-cascader__suggestion-item')[0].click();
+    expect(body.querySelector('.baza-xls-cascader__suggestion-list')).to.exist;
+    expect(body.querySelectorAll('.baza-xls-cascader__suggestion-item').length).to.equal(3);
+    body.querySelectorAll('.baza-xls-cascader__suggestion-item')[0].click();
     await waitImmediate();
     expect(vm.value).to.deep.equal(selectedValue);
   });
@@ -399,10 +399,10 @@ describe('Cascader', () => {
     input.value = 'Zhejiang';
     triggerEvent(input, 'input');
     await wait(300);
-    expect(body.querySelectorAll('.el-cascader__suggestion-item').length).to.equal(3);
+    expect(body.querySelectorAll('.baza-xls-cascader__suggestion-item').length).to.equal(3);
     input.value = 'xihu';
     triggerEvent(input, 'input');
     await wait(300);
-    expect(body.querySelector('.el-cascader__suggestion-item').textContent).to.equal('Zhejiang / Hangzhou / West Lake');
+    expect(body.querySelector('.baza-xls-cascader__suggestion-item').textContent).to.equal('Zhejiang / Hangzhou / West Lake');
   });
 });
