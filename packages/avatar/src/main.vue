@@ -39,18 +39,18 @@ export default {
   computed: {
     avatarClass() {
       const { size, icon, shape } = this;
-      let classList = ['el-avatar'];
+      let classList = ['baza-xls-avatar'];
 
       if (size && typeof size === 'string') {
-        classList.push(`el-avatar--${size}`);
+        classList.push(`baza-xls-avatar--${size}`);
       }
 
       if (icon) {
-        classList.push('el-avatar--icon');
+        classList.push('baza-xls-avatar--icon');
       }
 
       if (shape) {
-        classList.push(`el-avatar--${shape}`);
+        classList.push(`baza-xls-avatar--${shape}`);
       }
 
       return classList.join(' ');

@@ -5,8 +5,8 @@
       @after-enter="handleAfterEnter"
       @after-leave="handleAfterLeave">
       <div
-        class="el-popover el-popper"
-        :class="[popperClass, content && 'el-popover--plain']"
+        class="baza-xls-popover baza-xls-popper"
+        :class="[popperClass, content && 'baza-xls-popover--plain']"
         ref="popper"
         v-show="!disabled && showPopper"
         :style="{ width: width + 'px' }"
@@ -14,7 +14,7 @@
         :id="tooltipId"
         :aria-hidden="(disabled || !showPopper) ? 'true' : 'false'"
       >
-        <div class="el-popover__title" v-if="title" v-text="title"></div>
+        <div class="baza-xls-popover__title" v-if="title" v-text="title"></div>
         <slot>{{ content }}</slot>
       </div>
     </transition>
@@ -67,7 +67,7 @@ export default {
 
   computed: {
     tooltipId() {
-      return `el-popover-${generateId()}`;
+      return `baza-xls-popover-${generateId()}`;
     }
   },
   watch: {
@@ -88,7 +88,7 @@ export default {
     }
     // 可访问性
     if (reference) {
-      addClass(reference, 'el-popover__reference');
+      addClass(reference, 'baza-xls-popover__reference');
       reference.setAttribute('aria-describedby', this.tooltipId);
       reference.setAttribute('tabindex', this.tabindex); // tab序列
       popper.setAttribute('tabindex', 0);

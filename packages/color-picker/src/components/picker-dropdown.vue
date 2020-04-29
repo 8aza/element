@@ -1,16 +1,16 @@
 <template>
-  <transition name="el-zoom-in-top" @after-leave="doDestroy">
+  <transition name="baza-xls-zoom-in-top" @after-leave="doDestroy">
     <div
-      class="el-color-dropdown"
+      class="baza-xls-color-dropdown"
       v-show="showPopper">
-      <div class="el-color-dropdown__main-wrapper">
+      <div class="baza-xls-color-dropdown__main-wrapper">
         <hue-slider ref="hue" :color="color" vertical style="float: right;"></hue-slider>
         <sv-panel ref="sl" :color="color"></sv-panel>
       </div>
       <alpha-slider v-if="showAlpha" ref="alpha" :color="color"></alpha-slider>
       <predefine v-if="predefine" :color="color" :colors="predefine"></predefine>
-      <div class="el-color-dropdown__btns">
-        <span class="el-color-dropdown__value">
+      <div class="baza-xls-color-dropdown__btns">
+        <span class="baza-xls-color-dropdown__value">
           <el-input
             v-model="customInput"
             @keyup.native.enter="handleConfirm"
@@ -22,14 +22,14 @@
         <el-button
           size="mini"
           type="text"
-          class="el-color-dropdown__link-btn"
+          class="baza-xls-color-dropdown__link-btn"
           @click="$emit('clear')">
           {{ t('el.colorpicker.clear') }}
         </el-button>
         <el-button
           plain
           size="mini"
-          class="el-color-dropdown__btn"
+          class="baza-xls-color-dropdown__btn"
           @click="confirmValue">
           {{ t('el.colorpicker.confirm') }}
         </el-button>
@@ -49,7 +49,7 @@
   import ElButton from 'element-ui/packages/button';
 
   export default {
-    name: 'el-color-picker-dropdown',
+    name: 'baza-xls-color-picker-dropdown',
 
     mixins: [Popper, Locale],
 

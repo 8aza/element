@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-upload-dragger"
+    class="baza-xls-upload-dragger"
     :class="{
       'is-dragover': dragover
     }"

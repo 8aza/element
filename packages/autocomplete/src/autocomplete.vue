@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-autocomplete"
+    class="baza-xls-autocomplete"
     v-clickoutside="close"
     aria-haspopup="listbox"
     role="combobox"
@@ -148,7 +148,7 @@
         return (isValidData || this.loading) && this.activated;
       },
       id() {
-        return `el-autocomplete-${generateId()}`;
+        return `baza-xls-autocomplete-${generateId()}`;
       }
     },
     watch: {
@@ -242,8 +242,8 @@
         if (index >= this.suggestions.length) {
           index = this.suggestions.length - 1;
         }
-        const suggestion = this.$refs.suggestions.$el.querySelector('.el-autocomplete-suggestion__wrap');
-        const suggestionList = suggestion.querySelectorAll('.el-autocomplete-suggestion__list li');
+        const suggestion = this.$refs.suggestions.$el.querySelector('.baza-xls-autocomplete-suggestion__wrap');
+        const suggestionList = suggestion.querySelectorAll('.baza-xls-autocomplete-suggestion__list li');
 
         let highlightItem = suggestionList[index];
         let scrollTop = suggestion.scrollTop;

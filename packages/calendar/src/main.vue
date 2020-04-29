@@ -1,11 +1,11 @@
 <template>
-  <div class="el-calendar">
-    <div class="el-calendar__header">
-      <div class="el-calendar__title">
+  <div class="baza-xls-calendar">
+    <div class="baza-xls-calendar__header">
+      <div class="baza-xls-calendar__title">
         {{ i18nDate }}
       </div>
       <div
-        class="el-calendar__button-group"
+        class="baza-xls-calendar__button-group"
         v-if="validatedRange.length === 0">
         <el-button-group>
           <el-button
@@ -30,7 +30,7 @@
       </div>
     </div>
     <div
-      class="el-calendar__body"
+      class="baza-xls-calendar__body"
       v-if="validatedRange.length === 0"
       key="no-range">
       <date-table
@@ -41,7 +41,7 @@
     </div>
     <div
       v-else
-      class="el-calendar__body"
+      class="baza-xls-calendar__body"
       key="has-range">
       <date-table
         v-for="(range, index) in validatedRange"

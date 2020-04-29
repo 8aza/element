@@ -1,8 +1,8 @@
 <template>
   <a
     :class="[
-      'el-link',
-      type ? `el-link--${type}` : '',
+      'baza-xls-link',
+      type ? `baza-xls-link--${type}` : '',
       disabled && 'is-disabled',
       underline && !disabled && 'is-underline'
     ]"
@@ -13,7 +13,7 @@
 
     <i :class="icon" v-if="icon"></i>
 
-    <span v-if="$slots.default" class="el-link--inner">
+    <span v-if="$slots.default" class="baza-xls-link--inner">
       <slot></slot>
     </span>
 

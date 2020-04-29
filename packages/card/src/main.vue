@@ -1,9 +1,9 @@
 <template>
-  <div class="el-card" :class="shadow ? 'is-' + shadow + '-shadow' : 'is-always-shadow'">
-    <div class="el-card__header" v-if="$slots.header || header">
+  <div class="baza-xls-card" :class="shadow ? 'is-' + shadow + '-shadow' : 'is-always-shadow'">
+    <div class="baza-xls-card__header" v-if="$slots.header || header">
       <slot name="header">{{ header }}</slot>
     </div>
-    <div class="el-card__body" :style="bodyStyle">
+    <div class="baza-xls-card__body" :style="bodyStyle">
       <slot></slot>
     </div>
   </div>

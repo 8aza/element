@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-tree-node"
+    class="baza-xls-tree-node"
     @click.stop="handleClick"
     @contextmenu="($event) => this.handleContextMenu($event)"
     v-show="node.visible"
@@ -23,14 +23,14 @@
     @drop.stop="handleDrop"
     ref="node"
   >
-    <div class="el-tree-node__content"
+    <div class="baza-xls-tree-node__content"
       :style="{ 'padding-left': (node.level - 1) * tree.indent + 'px' }">
       <span
         @click.stop="handleExpandIconClick"
         :class="[
           { 'is-leaf': node.isLeaf, expanded: !node.isLeaf && expanded },
-          'el-tree-node__expand-icon',
-          tree.iconClass ? tree.iconClass : 'el-icon-caret-right'
+          'baza-xls-tree-node__expand-icon',
+          tree.iconClass ? tree.iconClass : 'baza-xls-icon-caret-right'
         ]"
       >
       </span>
@@ -45,13 +45,13 @@
       </el-checkbox>
       <span
         v-if="node.loading"
-        class="el-tree-node__loading-icon el-icon-loading">
+        class="baza-xls-tree-node__loading-icon baza-xls-icon-loading">
       </span>
       <node-content :node="node"></node-content>
     </div>
     <el-collapse-transition>
       <div
-        class="el-tree-node__children"
+        class="baza-xls-tree-node__children"
         v-if="!renderAfterExpand || childNodeRendered"
         v-show="expanded"
         role="group"
@@ -121,7 +121,7 @@
               ? parent.renderContent.call(parent._renderProxy, h, { _self: tree.$vnode.context, node, data, store })
               : tree.$scopedSlots.default
                 ? tree.$scopedSlots.default({ node, data })
-                : <span class="el-tree-node__label">{ node.label }</span>
+                : <span class="baza-xls-tree-node__label">{ node.label }</span>
           );
         }
       }

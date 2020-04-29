@@ -1,7 +1,7 @@
 <template>
   <div
     :class="[
-      'el-cascader-panel',
+      'baza-xls-cascader-panel',
       border && 'is-bordered'
     ]"
     @keydown="handleKeyDown">
@@ -49,7 +49,7 @@ const isLeaf = el => !el.getAttribute('aria-owns');
 const getSibling = (el, distance) => {
   const { parentNode } = el;
   if (parentNode) {
-    const siblings = parentNode.querySelectorAll('.el-cascader-node[tabindex="-1"]');
+    const siblings = parentNode.querySelectorAll('.baza-xls-cascader-node[tabindex="-1"]');
     const index = Array.prototype.indexOf.call(siblings, el);
     return siblings[index + distance] || null;
   }
@@ -236,14 +236,14 @@ export default {
         case KeyCode.left:
           const preMenu = this.$refs.menu[getMenuIndex(target) - 1];
           if (preMenu) {
-            const expandedNode = preMenu.$el.querySelector('.el-cascader-node[aria-expanded="true"]');
+            const expandedNode = preMenu.$el.querySelector('.baza-xls-cascader-node[aria-expanded="true"]');
             focusNode(expandedNode);
           }
           break;
         case KeyCode.right:
           const nextMenu = this.$refs.menu[getMenuIndex(target) + 1];
           if (nextMenu) {
-            const firstNode = nextMenu.$el.querySelector('.el-cascader-node[tabindex="-1"]');
+            const firstNode = nextMenu.$el.querySelector('.baza-xls-cascader-node[tabindex="-1"]');
             focusNode(firstNode);
           }
           break;
@@ -335,9 +335,9 @@ export default {
       menus.forEach(menu => {
         const menuElement = menu.$el;
         if (menuElement) {
-          const container = menuElement.querySelector('.el-scrollbar__wrap');
-          const activeNode = menuElement.querySelector('.el-cascader-node.is-active') ||
-            menuElement.querySelector('.el-cascader-node.in-active-path');
+          const container = menuElement.querySelector('.baza-xls-scrollbar__wrap');
+          const activeNode = menuElement.querySelector('.baza-xls-cascader-node.is-active') ||
+            menuElement.querySelector('.baza-xls-cascader-node.in-active-path');
           scrollIntoView(container, activeNode);
         }
       });

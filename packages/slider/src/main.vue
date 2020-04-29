@@ -1,7 +1,7 @@
 <template>
   <div
-    class="el-slider"
-    :class="{ 'is-vertical': vertical, 'el-slider--with-input': showInput }"
+    class="baza-xls-slider"
+    :class="{ 'is-vertical': vertical, 'baza-xls-slider--with-input': showInput }"
     role="slider"
     :aria-valuemin="min"
     :aria-valuemax="max"
@@ -11,7 +11,7 @@
     <el-input-number
       v-model="firstValue"
       v-if="showInput && !range"
-      class="el-slider__input"
+      class="baza-xls-slider__input"
       ref="input"
       @change="emitChange"
       :step="step"
@@ -23,13 +23,13 @@
       :size="inputSize">
     </el-input-number>
     <div
-      class="el-slider__runway"
+      class="baza-xls-slider__runway"
       :class="{ 'show-input': showInput, 'disabled': sliderDisabled }"
       :style="runwayStyle"
       @click="onSliderClick"
       ref="slider">
       <div
-        class="el-slider__bar"
+        class="baza-xls-slider__bar"
         :style="barStyle">
       </div>
       <slider-button
@@ -46,7 +46,7 @@
         v-if="range">
       </slider-button>
       <div
-        class="el-slider__stop"
+        class="baza-xls-slider__stop"
         v-for="(item, key) in stops"
         :key="key"
         :style="getStopStyle(item)"
@@ -57,11 +57,11 @@
           <div
             v-for="(item, key) in markList"
             :style="getStopStyle(item.position)"
-            class="el-slider__stop el-slider__marks-stop"
+            class="baza-xls-slider__stop baza-xls-slider__marks-stop"
             :key="key">
           </div>
         </div>
-        <div class="el-slider__marks">
+        <div class="baza-xls-slider__marks">
           <slider-marker
             :mark="item.mark" v-for="(item, key) in markList"
             :key="key"

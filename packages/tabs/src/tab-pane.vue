@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-tab-pane"
+    class="baza-xls-tab-pane"
     v-if="(!lazy || loaded) || active"
     v-show="active"
     role="tabpanel"

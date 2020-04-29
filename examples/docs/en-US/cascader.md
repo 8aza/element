@@ -453,7 +453,7 @@ Disable an option by setting a `disabled` field in the option object.
 
 ### Clearable
 
-Set `clearable` attribute for `el-cascader` and a clear icon will appear when selected and hovered
+Set `clearable` attribute for `baza-xls-cascader` and a clear icon will appear when selected and hovered
 
 :::demo
 ```html
@@ -1250,7 +1250,7 @@ Dynamic load its child nodes when checked a node.
 
 Search and select options with a keyword.
 
-:::demo Adding `filterable` to `el-cascader` enables filtering. Cascader will match nodes whose label or parent's label (according to `show-all-levels`) includes input keyword. Of course, you can customize search logic by `filter-method` which accepts a function, the first parameter is `node`, the second is `keyword`, and need return a boolean value indicating whether it hits.
+:::demo Adding `filterable` to `baza-xls-cascader` enables filtering. Cascader will match nodes whose label or parent's label (according to `show-all-levels`) includes input keyword. Of course, you can customize search logic by `filter-method` which accepts a function, the first parameter is `node`, the second is `keyword`, and need return a boolean value indicating whether it hits.
 ```html
 <div class="block">
   <span class="demonstration">Filterable (Single selection)</span>
@@ -1697,7 +1697,7 @@ You can customize the content of cascader node.
 
 `CascaderPanel` is the core component of `Cascader` which has various of features such as single selection, multiple selection, dynamic loading and so on.
 
-:::demo Just like `el-cascader`, you can set alternative options by `options`, and enable other features by `props`, see the API form below for details.
+:::demo Just like `baza-xls-cascader`, you can set alternative options by `options`, and enable other features by `props`, see the API form below for details.
 ```html
 <el-cascader-panel :options="options"></el-cascader-panel>
 

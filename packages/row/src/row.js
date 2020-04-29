@@ -36,10 +36,10 @@ export default {
   render(h) {
     return h(this.tag, {
       class: [
-        'el-row',
+        'baza-xls-row',
         this.justify !== 'start' ? `is-justify-${this.justify}` : '',
         this.align !== 'top' ? `is-align-${this.align}` : '',
-        { 'el-row--flex': this.type === 'flex' }
+        { 'baza-xls-row--flex': this.type === 'flex' }
       ],
       style: this.style
     }, this.$slots.default);

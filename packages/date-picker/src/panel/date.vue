@@ -1,25 +1,25 @@
 <template>
-  <transition name="el-zoom-in-top" @after-enter="handleEnter" @after-leave="handleLeave">
+  <transition name="baza-xls-zoom-in-top" @after-enter="handleEnter" @after-leave="handleLeave">
     <div
       v-show="visible"
-      class="el-picker-panel el-date-picker el-popper"
+      class="baza-xls-picker-panel baza-xls-date-picker baza-xls-popper"
       :class="[{
         'has-sidebar': $slots.sidebar || shortcuts,
         'has-time': showTime
       }, popperClass]">
-      <div class="el-picker-panel__body-wrapper">
-        <slot name="sidebar" class="el-picker-panel__sidebar"></slot>
-        <div class="el-picker-panel__sidebar" v-if="shortcuts">
+      <div class="baza-xls-picker-panel__body-wrapper">
+        <slot name="sidebar" class="baza-xls-picker-panel__sidebar"></slot>
+        <div class="baza-xls-picker-panel__sidebar" v-if="shortcuts">
           <button
             type="button"
-            class="el-picker-panel__shortcut"
+            class="baza-xls-picker-panel__shortcut"
             v-for="(shortcut, key) in shortcuts"
             :key="key"
             @click="handleShortcutClick(shortcut)">{{ shortcut.text }}</button>
         </div>
-        <div class="el-picker-panel__body">
-          <div class="el-date-picker__time-header" v-if="showTime">
-            <span class="el-date-picker__editor-wrap">
+        <div class="baza-xls-picker-panel__body">
+          <div class="baza-xls-date-picker__time-header" v-if="showTime">
+            <span class="baza-xls-date-picker__editor-wrap">
               <el-input
                 :placeholder="t('el.datepicker.selectDate')"
                 :value="visibleDate"
@@ -27,7 +27,7 @@
                 @input="val => userInputDate = val"
                 @change="handleVisibleDateChange" />
             </span>
-            <span class="el-date-picker__editor-wrap" v-clickoutside="handleTimePickClose">
+            <span class="baza-xls-date-picker__editor-wrap" v-clickoutside="handleTimePickClose">
               <el-input
                 ref="input"
                 @focus="timePickerVisible = true"
@@ -46,48 +46,48 @@
             </span>
           </div>
           <div
-            class="el-date-picker__header"
-            :class="{ 'el-date-picker__header--bordered': currentView === 'year' || currentView === 'month' }"
+            class="baza-xls-date-picker__header"
+            :class="{ 'baza-xls-date-picker__header--bordered': currentView === 'year' || currentView === 'month' }"
             v-show="currentView !== 'time'">
             <button
               type="button"
               @click="prevYear"
               :aria-label="t(`el.datepicker.prevYear`)"
-              class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-d-arrow-left">
+              class="baza-xls-picker-panel__icon-btn baza-xls-date-picker__prev-btn baza-xls-icon-d-arrow-left">
             </button>
             <button
               type="button"
               @click="prevMonth"
               v-show="currentView === 'date'"
               :aria-label="t(`el.datepicker.prevMonth`)"
-              class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-arrow-left">
+              class="baza-xls-picker-panel__icon-btn baza-xls-date-picker__prev-btn baza-xls-icon-arrow-left">
             </button>
             <span
               @click="showYearPicker"
               role="button"
-              class="el-date-picker__header-label">{{ yearLabel }}</span>
+              class="baza-xls-date-picker__header-label">{{ yearLabel }}</span>
             <span
               @click="showMonthPicker"
               v-show="currentView === 'date'"
               role="button"
-              class="el-date-picker__header-label"
+              class="baza-xls-date-picker__header-label"
               :class="{ active: currentView === 'month' }">{{t(`el.datepicker.month${ month + 1 }`)}}</span>
             <button
               type="button"
               @click="nextYear"
               :aria-label="t(`el.datepicker.nextYear`)"
-              class="el-picker-panel__icon-btn el-date-picker__next-btn el-icon-d-arrow-right">
+              class="baza-xls-picker-panel__icon-btn baza-xls-date-picker__next-btn baza-xls-icon-d-arrow-right">
             </button>
             <button
               type="button"
               @click="nextMonth"
               v-show="currentView === 'date'"
               :aria-label="t(`el.datepicker.nextMonth`)"
-              class="el-picker-panel__icon-btn el-date-picker__next-btn el-icon-arrow-right">
+              class="baza-xls-picker-panel__icon-btn baza-xls-date-picker__next-btn baza-xls-icon-arrow-right">
             </button>
           </div>
 
-          <div class="el-picker-panel__content">
+          <div class="baza-xls-picker-panel__content">
             <date-table
               v-show="currentView === 'date'"
               @pick="handleDatePick"
@@ -119,12 +119,12 @@
       </div>
 
       <div
-        class="el-picker-panel__footer"
+        class="baza-xls-picker-panel__footer"
         v-show="footerVisible && currentView === 'date'">
         <el-button
           size="mini"
           type="text"
-          class="el-picker-panel__link-btn"
+          class="baza-xls-picker-panel__link-btn"
           @click="changeToNow"
           v-show="selectionMode !== 'dates'">
           {{ t('el.datepicker.now') }}
@@ -132,7 +132,7 @@
         <el-button
           plain
           size="mini"
-          class="el-picker-panel__link-btn"
+          class="baza-xls-picker-panel__link-btn"
           @click="confirm">
           {{ t('el.datepicker.confirm') }}
         </el-button>

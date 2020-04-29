@@ -1,5 +1,5 @@
 <template>
-  <div class="el-transfer">
+  <div class="baza-xls-transfer">
     <transfer-panel
       v-bind="$props"
       ref="leftPanel"
@@ -10,22 +10,22 @@
       @checked-change="onSourceCheckedChange">
       <slot name="left-footer"></slot>
     </transfer-panel>
-    <div class="el-transfer__buttons">
+    <div class="baza-xls-transfer__buttons">
       <el-button
         type="primary"
-        :class="['el-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
+        :class="['baza-xls-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
         @click.native="addToLeft"
         :disabled="rightChecked.length === 0">
-        <i class="el-icon-arrow-left"></i>
+        <i class="baza-xls-icon-arrow-left"></i>
         <span v-if="buttonTexts[0] !== undefined">{{ buttonTexts[0] }}</span>
       </el-button>
       <el-button
         type="primary"
-        :class="['el-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
+        :class="['baza-xls-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
         @click.native="addToRight"
         :disabled="leftChecked.length === 0">
         <span v-if="buttonTexts[1] !== undefined">{{ buttonTexts[1] }}</span>
-        <i class="el-icon-arrow-right"></i>
+        <i class="baza-xls-icon-arrow-right"></i>
       </el-button>
     </div>
     <transfer-panel
@@ -136,7 +136,7 @@
         const key = this.props.key;
         return this.data.reduce((o, cur) => (o[cur[key]] = cur) && o, {});
       },
-  
+
       sourceData() {
         return this.data.filter(item => this.value.indexOf(item[this.props.key]) === -1);
       },

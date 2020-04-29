@@ -1,6 +1,6 @@
 <template>
-  <div class="el-transfer-panel">
-    <p class="el-transfer-panel__header">
+  <div class="baza-xls-transfer-panel">
+    <p class="baza-xls-transfer-panel__header">
       <el-checkbox
         v-model="allChecked"
         @change="handleAllCheckedChange"
@@ -9,10 +9,10 @@
         <span>{{ checkedSummary }}</span>
       </el-checkbox>
     </p>
-    
-    <div :class="['el-transfer-panel__body', hasFooter ? 'is-with-footer' : '']">
+
+    <div :class="['baza-xls-transfer-panel__body', hasFooter ? 'is-with-footer' : '']">
       <el-input
-        class="el-transfer-panel__filter"
+        class="baza-xls-transfer-panel__filter"
         v-model="query"
         size="small"
         :placeholder="placeholder"
@@ -20,7 +20,7 @@
         @mouseleave.native="inputHover = false"
         v-if="filterable">
         <i slot="prefix"
-          :class="['el-input__icon', 'el-icon-' + inputIcon]"
+          :class="['baza-xls-input__icon', 'baza-xls-icon-' + inputIcon]"
           @click="clearQuery"
         ></i>
       </el-input>
@@ -28,9 +28,9 @@
         v-model="checked"
         v-show="!hasNoMatch && data.length > 0"
         :class="{ 'is-filterable': filterable }"
-        class="el-transfer-panel__list">
+        class="baza-xls-transfer-panel__list">
         <el-checkbox
-          class="el-transfer-panel__item"
+          class="baza-xls-transfer-panel__item"
           :label="item[keyProp]"
           :disabled="item[disabledProp]"
           :key="item[keyProp]"
@@ -39,13 +39,13 @@
         </el-checkbox>
       </el-checkbox-group>
       <p
-        class="el-transfer-panel__empty"
+        class="baza-xls-transfer-panel__empty"
         v-show="hasNoMatch">{{ t('el.transfer.noMatch') }}</p>
       <p
-        class="el-transfer-panel__empty"
+        class="baza-xls-transfer-panel__empty"
         v-show="data.length === 0 && !hasNoMatch">{{ t('el.transfer.noData') }}</p>
     </div>
-    <p class="el-transfer-panel__footer" v-if="hasFooter">
+    <p class="baza-xls-transfer-panel__footer" v-if="hasFooter">
       <slot></slot>
     </p>
   </div>

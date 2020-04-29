@@ -45,7 +45,7 @@ class TableLayout {
     if (height === null) return false;
     const bodyWrapper = this.table.bodyWrapper;
     if (this.table.$el && bodyWrapper) {
-      const body = bodyWrapper.querySelector('.el-table__body');
+      const body = bodyWrapper.querySelector('.baza-xls-table__body');
       const prevScrollY = this.scrollY;
       const scrollY = body.offsetHeight > this.bodyHeight;
       this.scrollY = scrollY;

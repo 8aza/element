@@ -9,7 +9,7 @@ export const cellStarts = {
     minWidth: 48,
     realWidth: 48,
     order: '',
-    className: 'el-table-column--selection'
+    className: 'baza-xls-table-column--selection'
   },
   expand: {
     width: 48,
@@ -68,9 +68,9 @@ export const cellForced = {
       return column.label || '';
     },
     renderCell: function(h, { row, store }) {
-      const classes = ['el-table__expand-icon'];
+      const classes = ['baza-xls-table__expand-icon'];
       if (store.states.expandRows.indexOf(row) > -1) {
-        classes.push('el-table__expand-icon--expanded');
+        classes.push('baza-xls-table__expand-icon--expanded');
       }
       const callback = function(e) {
         e.stopPropagation();
@@ -78,12 +78,12 @@ export const cellForced = {
       };
       return (<div class={ classes }
         on-click={callback}>
-        <i class='el-icon el-icon-arrow-right'></i>
+        <i class='baza-xls-icon baza-xls-icon-arrow-right'></i>
       </div>);
     },
     sortable: false,
     resizable: false,
-    className: 'el-table__expand-column'
+    className: 'baza-xls-table__expand-column'
   }
 };
 
@@ -104,20 +104,20 @@ export function treeCellPrefix(h, { row, treeNode, store }) {
     store.loadOrToggle(row);
   };
   if (treeNode.indent) {
-    ele.push(<span class="el-table__indent" style={{'padding-left': treeNode.indent + 'px'}}></span>);
+    ele.push(<span class="baza-xls-table__indent" style={{'padding-left': treeNode.indent + 'px'}}></span>);
   }
   if (typeof treeNode.expanded === 'boolean' && !treeNode.noLazyChildren) {
-    const expandClasses = ['el-table__expand-icon', treeNode.expanded ? 'el-table__expand-icon--expanded' : ''];
-    let iconClasses = ['el-icon-arrow-right'];
+    const expandClasses = ['baza-xls-table__expand-icon', treeNode.expanded ? 'baza-xls-table__expand-icon--expanded' : ''];
+    let iconClasses = ['baza-xls-icon-arrow-right'];
     if (treeNode.loading) {
-      iconClasses = ['el-icon-loading'];
+      iconClasses = ['baza-xls-icon-loading'];
     }
     ele.push(<div class={ expandClasses }
       on-click={ callback }>
       <i class={ iconClasses }></i>
     </div>);
   } else {
-    ele.push(<span class="el-table__placeholder"></span>);
+    ele.push(<span class="baza-xls-table__placeholder"></span>);
   }
   return ele;
 }

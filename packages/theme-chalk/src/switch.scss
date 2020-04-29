@@ -10,8 +10,8 @@
   height: $--switch-height;
   vertical-align: middle;
   @include when(disabled) {
-    & .el-switch__core,
-    & .el-switch__label {
+    & .baza-xls-switch__core,
+    & .baza-xls-switch__label {
       cursor: not-allowed;
     }
   }
@@ -80,7 +80,7 @@
   }
 
   @include when(checked) {
-    .el-switch__core {
+    .baza-xls-switch__core {
       border-color: $--switch-on-color;
       background-color: $--switch-on-color;
       &::after {
@@ -95,13 +95,13 @@
   }
 
   @include m(wide) {
-    .el-switch__label {
-      &.el-switch__label--left {
+    .baza-xls-switch__label {
+      &.baza-xls-switch__labbaza-xls--left {
         span {
           left: 10px;
         }
       }
-      &.el-switch__label--right {
+      &.baza-xls-switch__labbaza-xls--right {
         span {
           right: 10px;
         }
@@ -109,8 +109,8 @@
     }
   }
 
-  & .label-fade-enter,
-  & .label-fade-leave-active {
+  & .labbaza-xls-fade-enter,
+  & .labbaza-xls-fade-leave-active {
     opacity: 0;
   }
 }

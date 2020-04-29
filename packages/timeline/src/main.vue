@@ -18,7 +18,7 @@
     render() {
       const reverse = this.reverse;
       const classes = {
-        'el-timeline': true,
+        'baza-xls-timeline': true,
         'is-reverse': reverse
       };
       let slots = this.$slots.default || [];

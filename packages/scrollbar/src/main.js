@@ -57,7 +57,7 @@ export default {
       }
     }
     const view = h(this.tag, {
-      class: ['el-scrollbar__view', this.viewClass],
+      class: ['baza-xls-scrollbar__view', this.viewClass],
       style: this.viewStyle,
       ref: 'resize'
     }, this.$slots.default);
@@ -66,7 +66,7 @@ export default {
         ref="wrap"
         style={ style }
         onScroll={ this.handleScroll }
-        class={ [this.wrapClass, 'el-scrollbar__wrap', gutter ? '' : 'el-scrollbar__wrap--hidden-default'] }>
+        class={ [this.wrapClass, 'baza-xls-scrollbar__wrap', gutter ? '' : 'baza-xls-scrollbar__wrap--hidden-default'] }>
         { [view] }
       </div>
     );
@@ -87,13 +87,13 @@ export default {
       nodes = ([
         <div
           ref="wrap"
-          class={ [this.wrapClass, 'el-scrollbar__wrap'] }
+          class={ [this.wrapClass, 'baza-xls-scrollbar__wrap'] }
           style={ style }>
           { [view] }
         </div>
       ]);
     }
-    return h('div', { class: 'el-scrollbar' }, nodes);
+    return h('div', { class: 'baza-xls-scrollbar' }, nodes);
   },
 
   methods: {

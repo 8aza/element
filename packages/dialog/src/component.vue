@@ -3,30 +3,30 @@
     name="dialog-fade"
     @after-enter="afterEnter"
     @after-leave="afterLeave">
-    <div class="el-dialog__wrapper" v-show="visible" @click.self="handleWrapperClick">
+    <div class="baza-xls-dialog__wrapper" v-show="visible" @click.self="handleWrapperClick">
       <div
         role="dialog"
         aria-modal="true"
         :aria-label="title || 'dialog'"
-        class="el-dialog"
-        :class="[{ 'is-fullscreen': fullscreen, 'el-dialog--center': center }, customClass]"
+        class="baza-xls-dialog"
+        :class="[{ 'is-fullscreen': fullscreen, 'baza-xls-dialog--center': center }, customClass]"
         ref="dialog"
         :style="style">
-        <div class="el-dialog__header">
+        <div class="baza-xls-dialog__header">
           <slot name="title">
-            <span class="el-dialog__title">{{ title }}</span>
+            <span class="baza-xls-dialog__title">{{ title }}</span>
           </slot>
           <button
             type="button"
-            class="el-dialog__headerbtn"
+            class="baza-xls-dialog__headerbtn"
             aria-label="Close"
             v-if="showClose"
             @click="handleClose">
-            <i class="el-dialog__close el-icon el-icon-close"></i>
+            <i class="baza-xls-dialog__close baza-xls-icon baza-xls-icon-close"></i>
           </button>
         </div>
-        <div class="el-dialog__body" v-if="rendered"><slot></slot></div>
-        <div class="el-dialog__footer" v-if="$slots.footer">
+        <div class="baza-xls-dialog__body" v-if="rendered"><slot></slot></div>
+        <div class="baza-xls-dialog__footer" v-if="$slots.footer">
           <slot name="footer"></slot>
         </div>
       </div>

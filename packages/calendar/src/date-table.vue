@@ -159,7 +159,7 @@ export default {
     return (
       <table
         class={{
-          'el-calendar-table': true,
+          'baza-xls-calendar-table': true,
           'is-range': this.isInRange
         }}
         cellspacing="0"
@@ -171,15 +171,15 @@ export default {
           {
             this.rows.map((row, index) => <tr
               class={{
-                'el-calendar-table__row': true,
-                'el-calendar-table__row--hide-border': index === 0 && this.hideHeader
+                'baza-xls-calendar-table__row': true,
+                'baza-xls-calendar-table__row--hide-border': index === 0 && this.hideHeader
               }}
               key={index}>
               {
                 row.map((cell, key) => <td key={key}
                   class={ this.getCellClass(cell) }
                   onClick={this.pickDay.bind(this, cell)}>
-                  <div class="el-calendar-day">
+                  <div class="baza-xls-calendar-day">
                     {
                       this.cellRenderProxy(cell)
                     }

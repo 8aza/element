@@ -1,6 +1,6 @@
 <template>
-  <transition name="el-zoom-in-top" @after-leave="doDestroy">
-    <ul class="el-dropdown-menu el-popper" :class="[size && `el-dropdown-menu--${size}`]" v-show="showPopper">
+  <transition name="baza-xls-zoom-in-top" @after-leave="doDestroy">
+    <ul class="baza-xls-dropdown-menu baza-xls-popper" :class="[size && `baza-xls-dropdown-menu--${size}`]" v-show="showPopper">
       <slot></slot>
     </ul>
   </transition>

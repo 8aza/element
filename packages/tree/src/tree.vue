@@ -1,8 +1,8 @@
 <template>
   <div
-    class="el-tree"
+    class="baza-xls-tree"
     :class="{
-      'el-tree--highlight-current': highlightCurrent,
+      'baza-xls-tree--highlight-current': highlightCurrent,
       'is-dragging': !!dragState.draggingNode,
       'is-drop-not-allow': !dragState.allowDrop,
       'is-drop-inner': dragState.dropType === 'inner'
@@ -19,12 +19,12 @@
       :render-content="renderContent"
       @node-expand="handleNodeExpand">
     </el-tree-node>
-    <div class="el-tree__empty-block" v-if="isEmpty">
-      <span class="el-tree__empty-text">{{ emptyText }}</span>
+    <div class="baza-xls-tree__empty-block" v-if="isEmpty">
+      <span class="baza-xls-tree__empty-text">{{ emptyText }}</span>
     </div>
     <div
       v-show="dragState.showDropIndicator"
-      class="el-tree__drop-indicator"
+      class="baza-xls-tree__drop-indicator"
       ref="dropIndicator">
     </div>
   </div>
@@ -293,7 +293,7 @@
 
       handleKeydown(ev) {
         const currentItem = ev.target;
-        if (currentItem.className.indexOf('el-tree-node') === -1) return;
+        if (currentItem.className.indexOf('baza-xls-tree-node') === -1) return;
         const keyCode = ev.keyCode;
         this.treeItems = this.$el.querySelectorAll('.is-focusable[role=treeitem]');
         const currentIndex = this.treeItemArray.indexOf(currentItem);
@@ -422,7 +422,7 @@
           dropType = 'none';
         }
 
-        const iconPosition = dropNode.$el.querySelector('.el-tree-node__expand-icon').getBoundingClientRect();
+        const iconPosition = dropNode.$el.querySelector('.baza-xls-tree-node__expand-icon').getBoundingClientRect();
         const dropIndicator = this.$refs.dropIndicator;
         if (dropType === 'before') {
           indicatorTop = iconPosition.top - treePosition.top;
